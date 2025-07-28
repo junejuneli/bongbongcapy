@@ -1,0 +1,239 @@
+import { motion } from 'framer-motion'
+import { Download as DownloadIcon, Apple, Monitor, Star, Users, Trophy } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+
+const Download = () => {
+  const { t } = useTranslation()
+  
+  const stats = [
+    { icon: Users, number: '10K+', label: t('download.stats.users') },
+    { icon: Star, number: '4.9', label: t('download.stats.rating') },
+    { icon: Trophy, number: '3', label: t('download.stats.awards') }
+  ]
+
+  const platforms = [
+    {
+      name: t('download.platforms.windows.name'),
+      icon: Monitor,
+      description: t('download.platforms.windows.description'),
+      downloadUrl: '#',
+      available: true
+    },
+    {
+      name: t('download.platforms.macos.name'),
+      icon: Apple,
+      description: t('download.platforms.macos.description'),
+      downloadUrl: '#',
+      available: true
+    },
+    {
+      name: t('download.platforms.linux.name'),
+      icon: Monitor,
+      description: t('download.platforms.linux.description'),
+      downloadUrl: '#',
+      available: true
+    }
+  ]
+
+  const features = t('download.features', { returnObjects: true }) as string[]
+
+  return (
+    <section id="download" className="section-padding relative overflow-hidden bg-gradient-to-br from-capy-50 via-lotus-50 to-pond-50">
+      {/* 背景装饰 */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-lotus-200 rounded-full blur-3xl opacity-60" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-pond-200 rounded-full blur-3xl opacity-40" />
+        <div className="absolute top-3/4 left-3/4 w-80 h-80 bg-capy-200 rounded-full blur-3xl opacity-50" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* 统计数据 */}
+        <motion.div
+          className="grid grid-cols-3 gap-8 mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          {stats.map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              className="text-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+            >
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-capy-500 to-lotus-500 rounded-2xl mb-4 shadow-lg">
+                <stat.icon className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-3xl lg:text-4xl font-bold text-gradient mb-2">
+                {stat.number}
+              </div>
+              <div className="text-gray-600 font-medium">
+                {stat.label}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* 主要下载区域 */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* 左侧：下载信息 */}
+          <motion.div
+            className="text-center lg:text-left"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <motion.div
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-capy-100 to-pond-100 rounded-full mb-8"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <DownloadIcon className="w-5 h-5 text-capy-600" />
+              <span className="text-capy-700 font-semibold font-cute">{t('download.badge')}</span>
+            </motion.div>
+
+            <h2 className="text-4xl lg:text-6xl font-display font-bold mb-6">
+              <span className="text-gradient">{t('download.title')}</span>
+              <br />
+              <span className="text-gray-800">{t('download.subtitle')}</span>
+            </h2>
+
+            <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0 font-body">
+              {t('download.description')}
+            </p>
+
+            {/* 特色亮点 */}
+            <motion.div
+              className="grid gap-4 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature}
+                  className="flex items-center gap-3 text-lg font-body"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                >
+                  <span>{feature}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* 右侧：平台选择 */}
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            {platforms.map((platform, index) => (
+              <motion.div
+                key={platform.name}
+                className={`card-float p-8 ${
+                  platform.available 
+                    ? 'cursor-pointer hover:shadow-2xl' 
+                    : 'opacity-60'
+                }`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                whileHover={platform.available ? { y: -5, scale: 1.02 } : {}}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-6">
+                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
+                      platform.available 
+                        ? 'bg-gradient-to-r from-capy-500 to-lotus-500' 
+                        : 'bg-gray-400'
+                    }`}>
+                      <platform.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-800 mb-2 flex items-center gap-3 font-display">
+                        {platform.name}
+
+                      </h3>
+                      <p className="text-gray-600 font-body">{platform.description}</p>
+                    </div>
+                  </div>
+                  
+                  {platform.available ? (
+                    <motion.button
+                      className="btn-primary px-8 py-4"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => window.open(platform.downloadUrl, '_blank')}
+                    >
+                      <DownloadIcon className="w-5 h-5 mr-2" />
+                      {t('download.download')}
+                    </motion.button>
+                  ) : (
+                    <div className="px-8 py-4 bg-gray-200 text-gray-500 rounded-full font-semibold font-cute">
+                      {t('download.waiting')}
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* 底部额外信息 */}
+        <motion.div
+          className="text-center mt-20 p-8 card-float"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h3 className="text-2xl font-bold text-gray-800 mb-4 font-display">{t('download.requirements.title')}</h3>
+          <div className="grid md:grid-cols-3 gap-6 text-left">
+            <div>
+              <h4 className="font-semibold text-capy-600 mb-3 font-cute">{t('download.requirements.windows')}</h4>
+              <ul className="space-y-2 text-gray-600 font-body text-sm">
+                <li>• {t('download.requirements.items.os_windows')}</li>
+                <li>• {t('download.requirements.items.memory')}</li>
+                <li>• {t('download.requirements.items.storage')}</li>
+                <li>• {t('download.requirements.items.network')}</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-lotus-600 mb-3 font-cute">{t('download.requirements.macos')}</h4>
+              <ul className="space-y-2 text-gray-600 font-body text-sm">
+                <li>• {t('download.requirements.items.os_macos')}</li>
+                <li>• {t('download.requirements.items.memory')}</li>
+                <li>• {t('download.requirements.items.storage')}</li>
+                <li>• {t('download.requirements.items.network')}</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-pond-600 mb-3 font-cute">{t('download.requirements.linux')}</h4>
+              <ul className="space-y-2 text-gray-600 font-body text-sm">
+                <li>• {t('download.requirements.items.os_linux')}</li>
+                <li>• {t('download.requirements.items.memory')}</li>
+                <li>• {t('download.requirements.items.storage')}</li>
+                <li>• {t('download.requirements.items.network')}</li>
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+export default Download 

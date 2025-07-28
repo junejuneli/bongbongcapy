@@ -1,0 +1,191 @@
+@import url('https://fonts.loli.net/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.loli.net/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.loli.net/css2?family=Fredoka:wght@300..600&display=swap');
+
+/* 本地字体定义 */
+@font-face {
+  font-family: 'AlibabaHealthFont2.0CN';
+  src: url('./assets/font/AlibabaHealthFont2.0CN-85B.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-gradient-to-br from-pond-50 via-lotus-50 to-capy-50 font-body antialiased;
+    background-attachment: fixed;
+    font-family: 'Nunito', 'Noto Sans SC', sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-capy-500 to-capy-600 px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:from-capy-600 hover:to-capy-700 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-capy-200 touch-manipulation;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full bg-white/90 backdrop-blur-sm px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-capy-600 shadow-lg transition-all duration-300 hover:bg-white hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-pond-200 touch-manipulation;
+  }
+  
+  .card-float {
+    @apply bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-white/50 transition-all duration-300 hover:shadow-2xl hover:bg-white/90 hover:scale-105;
+  }
+  
+  .glass-morphism {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.08));
+    backdrop-filter: blur(20px) saturate(1.2);
+    -webkit-backdrop-filter: blur(20px) saturate(1.2);
+    border-radius: 16px;
+    box-shadow: 
+      0 8px 40px rgba(0, 0, 0, 0.12),
+      0 4px 16px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  /* 移动端优化的玻璃效果 */
+  @media (max-width: 768px) {
+    .glass-morphism {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      @apply bg-white/30;
+    }
+  }
+  
+  .glass-morphism-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/20 shadow-xl;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.05));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.37),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 0 rgba(255, 255, 255, 0.05);
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-capy-600 via-lotus-600 to-pond-600 bg-clip-text text-transparent;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-capy-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-capy-400;
+}
+
+/* 荷花池波纹效果 */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(20, 184, 166, 0.5);
+  transform: scale(0);
+  animation: ripple 2s infinite;
+}
+
+/* 语言特定字体样式 */
+/* 中文使用阿里健康体 */
+:root[lang="zh"] .font-display,
+:root[lang="zh-CN"] .font-display,
+html[lang="zh"] .font-display,
+html[lang="zh-CN"] .font-display {
+  font-family: 'AlibabaHealthFont2.0CN', system-ui, sans-serif !important;
+}
+
+:root[lang="zh"] .font-body,
+:root[lang="zh-CN"] .font-body,
+html[lang="zh"] .font-body,
+html[lang="zh-CN"] .font-body {
+  font-family: 'AlibabaHealthFont2.0CN', system-ui, sans-serif !important;
+}
+
+:root[lang="zh"] .font-cute,
+:root[lang="zh-CN"] .font-cute,
+html[lang="zh"] .font-cute,
+html[lang="zh-CN"] .font-cute {
+  font-family: 'AlibabaHealthFont2.0CN', system-ui, sans-serif !important;
+}
+
+:root[lang="zh"] .font-playful,
+:root[lang="zh-CN"] .font-playful,
+html[lang="zh"] .font-playful,
+html[lang="zh-CN"] .font-playful {
+  font-family: 'AlibabaHealthFont2.0CN', system-ui, sans-serif !important;
+}
+
+/* 日文使用阿里健康体 */
+:root[lang="ja"] .font-display,
+:root[lang="ja-JP"] .font-display,
+html[lang="ja"] .font-display,
+html[lang="ja-JP"] .font-display {
+  font-family: 'AlibabaHealthFont2.0CN', system-ui, sans-serif !important;
+}
+
+:root[lang="ja"] .font-body,
+:root[lang="ja-JP"] .font-body,
+html[lang="ja"] .font-body,
+html[lang="ja-JP"] .font-body {
+  font-family: 'AlibabaHealthFont2.0CN', system-ui, sans-serif !important;
+}
+
+:root[lang="ja"] .font-cute,
+:root[lang="ja-JP"] .font-cute,
+html[lang="ja"] .font-cute,
+html[lang="ja-JP"] .font-cute {
+  font-family: 'AlibabaHealthFont2.0CN', system-ui, sans-serif !important;
+}
+
+:root[lang="ja"] .font-playful,
+:root[lang="ja-JP"] .font-playful,
+html[lang="ja"] .font-playful,
+html[lang="ja-JP"] .font-playful {
+  font-family: 'AlibabaHealthFont2.0CN', system-ui, sans-serif !important;
+} 

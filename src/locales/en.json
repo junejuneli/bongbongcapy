@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "gameplay": "Gameplay",
+    "costumes": "Collection",
+    "download": "Download"
+  },
+  "hero": {
+    "tagline": "Super Cute Capybara Companion",
+    "title": "BongBongCapy",
+    "subtitle": "敲好运",
+    "description": {
+      "line1": "Your exclusive {{highlight1}} buddy",
+      "line2": "Accumulate merit with adorable Capybara, make wishes at lotus pond",
+      "line3": "Collect treasures in this {{highlight2}} game",
+      "highlight1": "work & study",
+      "highlight2": "idle dress-up"
+    },
+    "features": {
+      "healing": "Healing",
+      "collection": "Dress-up Collection", 
+      "blessing": "Merit Wishes"
+    },
+    "cta": {
+      "download": "Download Now",
+      "learn": "Learn More"
+    }
+  },
+  "features": {
+    "badge": "Game Features",
+    "title": "Why Choose BongBongCapy?",
+    "subtitle": "A healing idle game designed for busy life, let cute capybara accompany every moment",
+    "items": {
+      "companion": {
+        "title": "Perfect Buddy",
+        "description": "The perfect companion during work & study breaks, easy idle gameplay"
+      },
+      "healing": {
+        "title": "Healing Companion", 
+        "description": "Super cute capybara accompanies you 24/7, healing your weary soul"
+      },
+      "blessing": {
+        "title": "Merit Wishes",
+        "description": "Make wishes at lotus pond, accumulate merit to get desired treasures"
+      },
+      "collection": {
+        "title": "Costume Collection",
+        "description": "Rich dress-up system, collect various styles of treasure costumes"
+      },
+      "idle": {
+        "title": "Idle Gameplay", 
+        "description": "No frequent operations needed, enjoy fun and growth while idle"
+      },
+      "time": {
+        "title": "Fragment Time",
+        "description": "Make good use of fragmented time, enjoy relaxing gaming anytime"
+      }
+    },
+    "cta": "Start Your Healing Journey"
+  },
+  "gameplay": {
+    "badge": "Gameplay",
+    "title": "Simple & Easy",
+    "subtitle": "Healing Idle Experience", 
+    "description": "No complex operations, enjoy relaxing capybara time in four simple steps",
+    "highlights": {
+      "title": "Relaxing Idle, Healing Companion",
+      "description": "BongBongCapy features innovative idle gameplay, letting you enjoy gaming fun while busy with work and study. Cute capybara accompanies you 24/7, automatically accumulating merit.",
+      "features": {
+        "goal": "Clear Goals - Simple wish system",
+        "time": "Flexible Time - Pause and resume anytime", 
+        "surprise": "Endless Surprises - New discoveries with each wish",
+        "collect": "Collection Fun - Rich costumes await you"
+      }
+    },
+    "steps": {
+      "title": "Game Flow",
+      "idle": {
+        "title": "Start Idle",
+        "description": "Launch the game, let capybara begin its merit journey"
+      },
+      "accumulate": {
+        "title": "Accumulate Merit", 
+        "description": "During work & study breaks, automatically accumulate merit points"
+      },
+      "wish": {
+        "title": "Lotus Pond Wishes",
+        "description": "Spend merit making wishes at lotus pond, get mysterious rewards"
+      },
+      "reward": {
+        "title": "Get Costumes",
+        "description": "Successful wishes grant treasure costumes, create unique styles"
+      }
+    },
+    "ui": {
+      "merit": "Merit",
+      "status": "Capybara is working hard to accumulate merit..."
+    }
+  },
+  "costumes": {
+    "badge": "Treasures",
+    "title": "Costume Collection",
+    "subtitle": "Show Your Personality",
+    "description": "Rich and diverse costume system, from mythological legends to pastoral scenes, each piece is a unique artwork",
+          "categories": {
+        "headwear": "Headwear",
+        "clothing": "Clothing",
+        "merit": "Merit"
+      },
+    "rarity": {
+      "legendary": "Legendary",
+      "epic": "Epic", 
+      "rare": "Rare",
+      "common": "Common"
+    },
+    "more": "More mysterious costumes await your discovery!",
+    "cta": "Start Collection Journey"
+  },
+  "download": {
+    "badge": "Download Now",
+    "title": "Start Your",
+    "subtitle": "Capybara Journey", 
+    "description": "Download BongBongCapy for free and embark on a healing idle journey with adorable capybaras. Download now to get the starter pack with exclusive costumes and extra merit points!",
+    "stats": {
+      "users": "Users Love",
+      "rating": "Rating",
+      "awards": "Award Winner"
+    },
+    "features": [
+      "🎁 Exclusive Starter Pack",
+      "🆓 Completely Free Game",
+      "☁️ Cloud Data Save", 
+      "🔄 Regular Content Updates"
+    ],
+    "platforms": {
+      "windows": {
+        "name": "Windows",
+        "description": "Supports Windows 10/11"
+      },
+      "macos": {
+        "name": "macOS", 
+        "description": "Supports macOS 12+"
+      },
+      "linux": {
+        "name": "Linux",
+        "description": "Supports Ubuntu 18.04+"
+      }
+    },
+    "download": "Download",
+    "waiting": "Coming Soon",
+    "requirements": {
+      "title": "System Requirements",
+      "windows": "Windows Version",
+      "macos": "macOS Version",
+      "linux": "Linux Version",
+      "items": {
+        "os_windows": "Windows 7 and later",
+        "os_macos": "macOS Catalina (10.15) and later", 
+        "os_linux": "Ubuntu 18.04 and later / Other Linux distributions",
+        "memory": "Memory: 4GB RAM",
+        "storage": "Storage: 2GB available space",
+        "network": "Network: Stable internet connection"
+      }
+    }
+  },
+  "footer": {
+    "description": "Spend healing time with super cute capybara, make wishes at lotus pond, collect treasure costumes. Your exclusive work & study buddy.",
+    "sections": {
+      "game": {
+        "title": "Game",
+        "download": "Download Game",
+        "features": "Game Features", 
+        "gameplay": "Gameplay Guide",
+        "costumes": "Costume Collection"
+      },
+      "support": {
+        "title": "Support",
+        "guide": "User Guide",
+        "faq": "FAQ",
+        "tech": "Tech Support",
+        "feedback": "Feedback"
+      },
+      "community": {
+        "title": "Community", 
+        "qq": "Official QQ Group",
+        "wechat": "WeChat Group",
+        "forum": "User Forum",
+        "blog": "Dev Blog"
+      }
+    },
+    "copyright": "© {{year}} BongBongCapy 敲好运.",
+    "made": "Made with",
+    "for": "for all capybara lovers",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service", 
+      "cookies": "Cookie Policy"
+    }
+  },
+  "floating": {
+    "messages": [
+      "Hi! I'm your capybara buddy~ 🐹",
+      "Remember to work and study well! 💪", 
+      "When tired, make wishes with me~ ✨",
+      "New costumes arrived! Come check them out~ 👗",
+      "Merit points increased a bit~ 🌸"
+    ],
+    "click": "Click me for another topic~"
+  },
+  "stats": {
+    "users": "Users Love",
+    "rating": "Rating", 
+    "awards": "Awards Won"
+  }
+} 

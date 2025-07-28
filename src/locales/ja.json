@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "features": "特徴",
+    "gameplay": "ゲームプレイ",
+    "costumes": "コレクション",
+    "download": "ダウンロード"
+  },
+  "hero": {
+    "tagline": "超かわいいカピバラのお友達",
+    "title": "敲好運",
+    "subtitle": "BongBongCapy",
+    "description": {
+      "line1": "あなた専用の {{highlight1}} 相棒",
+      "line2": "愛らしいカピバラと功徳を積み、蓮池で願い事",
+      "line3": "秘宝を集める {{highlight2}} ゲーム",
+      "highlight1": "仕事・勉強",
+      "highlight2": "着せ替え放置"
+    },
+    "features": {
+      "healing": "癒し系",
+      "collection": "着せ替えコレクション", 
+      "blessing": "功徳祈願"
+    },
+    "cta": {
+      "download": "今すぐダウンロード",
+      "learn": "詳しく見る"
+    }
+  },
+  "features": {
+    "badge": "ゲーム特徴",
+    "title": "なぜ敲好運を選ぶ？",
+    "subtitle": "忙しい生活のために設計された癒し系放置ゲーム、かわいいカピバラがあなたの毎瞬間を彩ります",
+    "items": {
+      "companion": {
+        "title": "最高の相棒",
+        "description": "仕事・勉強の合間の完璧なパートナー、簡単放置プレイ"
+      },
+      "healing": {
+        "title": "癒しの仲間", 
+        "description": "超かわいいカピバラが24時間付き添い、疲れた心を癒します"
+      },
+      "blessing": {
+        "title": "功徳祈願",
+        "description": "蓮池で祈願し、功徳を積んで望みの秘宝を手に入れよう"
+      },
+      "collection": {
+        "title": "衣装コレクション",
+        "description": "豊富な着せ替えシステム、様々なスタイルの秘宝衣装を収集"
+      },
+      "idle": {
+        "title": "放置プレイ", 
+        "description": "頻繁な操作は不要、放置でもゲームの楽しさと成長を体験"
+      },
+      "time": {
+        "title": "隙間時間",
+        "description": "隙間時間を有効活用、いつでもどこでもリラックスゲーム"
+      }
+    },
+    "cta": "癒しの旅を始める"
+  },
+  "gameplay": {
+    "badge": "ゲームプレイ",
+    "title": "シンプル＆簡単",
+    "subtitle": "癒し放置体験", 
+    "description": "複雑な操作は不要、4つの簡単ステップでリラックスカピバラタイムを楽しもう",
+    "highlights": {
+      "title": "リラックス放置、癒しの仲間",
+      "description": "『敲好運』は革新的な放置プレイを採用し、忙しい仕事・勉強の合間でもゲームの楽しさを体験できます。かわいいカピバラが24時間付き添い、自動で功徳を積みます。",
+      "features": {
+        "goal": "明確な目標 - シンプル祈願システム",
+        "time": "柔軟な時間 - いつでも一時停止・再開", 
+        "surprise": "尽きない驚き - 祈願のたびに新発見",
+        "collect": "コレクションの楽しさ - 豊富な衣装があなたを待っています"
+      }
+    },
+    "steps": {
+      "title": "ゲームフロー",
+      "idle": {
+        "title": "放置開始",
+        "description": "ゲームを起動し、カピバラの功徳の旅を始めよう"
+      },
+      "accumulate": {
+        "title": "功徳蓄積", 
+        "description": "仕事・勉強の合間に、自動で功徳ポイントを蓄積"
+      },
+      "wish": {
+        "title": "蓮池祈願",
+        "description": "功徳を消費して蓮池で祈願し、神秘的な報酬を獲得"
+      },
+      "reward": {
+        "title": "衣装獲得",
+        "description": "祈願成功で秘宝衣装を獲得、ユニークなスタイルを作ろう"
+      }
+    },
+    "ui": {
+      "merit": "功徳",
+      "status": "カピバラが一生懸命功徳を積んでいます..."
+    }
+  },
+  "costumes": {
+    "badge": "秘宝",
+    "title": "衣装コレクション",
+    "subtitle": "個性を表現",
+    "description": "豊富で多様な衣装システム、神話伝説から田園風景まで、一着一着がユニークなアート作品",
+    "categories": {
+      "headwear": "頭飾り",
+      "clothing": "衣装", 
+      "merit": "功徳"
+    },
+    "rarity": {
+      "legendary": "伝説",
+      "epic": "叙事詩", 
+      "rare": "レア",
+      "common": "コモン"
+    },
+    "more": "まだまだ神秘的な衣装があなたの発見を待っています！",
+    "cta": "コレクションの旅を始める"
+  },
+  "download": {
+    "badge": "今すぐダウンロード",
+    "title": "あなたの",
+    "subtitle": "カピバラの旅を始めよう", 
+    "description": "『敲好運』を無料ダウンロード、超かわいいカピバラと一緒に癒しの放置時間を開始しよう。今ダウンロードで初心者パック（限定衣装と追加功徳値付き）をゲット！",
+    "stats": {
+      "users": "ユーザーに愛される",
+      "rating": "評価",
+      "awards": "受賞作品"
+    },
+    "features": [
+      "🎁 初心者専用パック",
+      "🆓 完全無料ゲーム",
+      "☁️ クラウドデータ保存", 
+      "🔄 定期コンテンツ更新"
+    ],
+    "platforms": {
+      "windows": {
+        "name": "Windows",
+        "description": "Windows 10/11対応"
+      },
+      "macos": {
+        "name": "macOS", 
+        "description": "macOS 12+対応"
+      },
+      "linux": {
+        "name": "Linux",
+        "description": "Ubuntu 18.04+対応"
+      }
+    },
+    "download": "ダウンロード",
+    "waiting": "お楽しみに",
+    "requirements": {
+      "title": "システム要件",
+      "windows": "Windowsバージョン",
+      "macos": "macOSバージョン",
+      "linux": "Linuxバージョン",
+      "items": {
+        "os_windows": "Windows 7 以降",
+        "os_macos": "macOS Catalina (10.15) 以降",
+        "os_linux": "Ubuntu 18.04 以降 / その他 Linux ディストリビューション",
+        "memory": "メモリ：4GB RAM",
+        "storage": "ストレージ：2GB利用可能容量", 
+        "network": "ネットワーク：安定したインターネット接続"
+      }
+    }
+  },
+  "footer": {
+    "description": "超かわいいカピバラと癒しの時間を過ごし、蓮池で祈願し、秘宝衣装を収集しよう。あなた専用の仕事・勉強相棒。",
+    "sections": {
+      "game": {
+        "title": "ゲーム",
+        "download": "ゲームダウンロード",
+        "features": "ゲーム特徴", 
+        "gameplay": "プレイガイド",
+        "costumes": "衣装コレクション"
+      },
+      "support": {
+        "title": "サポート",
+        "guide": "ユーザーガイド",
+        "faq": "よくある質問",
+        "tech": "技術サポート",
+        "feedback": "フィードバック"
+      },
+      "community": {
+        "title": "コミュニティ", 
+        "qq": "公式QQグループ",
+        "wechat": "WeChatグループ",
+        "forum": "ユーザーフォーラム",
+        "blog": "開発ブログ"
+      }
+    },
+    "copyright": "© {{year}} 敲好運 BongBongCapy.",
+    "made": "Made with",
+    "for": "for all capybara lovers",
+    "links": {
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約", 
+      "cookies": "Cookieポリシー"
+    }
+  },
+  "floating": {
+    "messages": [
+      "こんにちは！カピバラの相棒です〜 🐹",
+      "お仕事・お勉強頑張って！💪", 
+      "疲れたら一緒に願い事しましょう〜 ✨",
+      "新しい衣装が届きました！見てみて〜 👗",
+      "功徳ポイントが少し増えました〜 🌸"
+    ],
+    "click": "クリックで話題を変える〜"
+  },
+  "stats": {
+    "users": "ユーザー愛用",
+    "rating": "評価", 
+    "awards": "受賞作品"
+  }
+} 
