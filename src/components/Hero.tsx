@@ -8,16 +8,16 @@ const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 lg:pt-0">
       {/* 背景图片 */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={{
           backgroundImage: `url('/图片/背景图1438.jpg')`,
         }}
       />
-      
+
       {/* 渐变覆盖层 */}
       <div className="absolute inset-0 bg-gradient-to-br from-pond-100/80 via-lotus-100/60 to-capy-100/80" />
-      
+
       {/* 浮动元素装饰 */}
       <div className="absolute inset-0">
         {Array.from({ length: 20 }).map((_, i) => (
@@ -48,7 +48,7 @@ const Hero = () => {
             className="space-y-6 sm:space-y-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.4, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
             {/* 标题 */}
             <div className="space-y-4">
@@ -72,7 +72,7 @@ const Hero = () => {
                   <IconSparkles size={24} />
                 </motion.div>
               </motion.div>
-              
+
               <motion.h1
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-display font-bold leading-tight"
                 initial={{ opacity: 0, y: 30 }}
@@ -97,8 +97,8 @@ const Hero = () => {
               transition={{ duration: 0.4, delay: 0.3 }}
             >
               <p>
-                {t('hero.description.line1', { 
-                  highlight1: t('hero.description.highlight1') 
+                {t('hero.description.line1', {
+                  highlight1: t('hero.description.highlight1')
                 }).split(t('hero.description.highlight1')).map((part, index) => (
                   <span key={index}>
                     {part}
@@ -112,8 +112,8 @@ const Hero = () => {
               </p>
               <p className="mt-2">{t('hero.description.line2')}</p>
               <p className="mt-2">
-                {t('hero.description.line3', { 
-                  highlight2: t('hero.description.highlight2') 
+                {t('hero.description.line3', {
+                  highlight2: t('hero.description.highlight2')
                 }).split(t('hero.description.highlight2')).map((part, index) => (
                   <span key={index}>
                     {part}
@@ -203,12 +203,12 @@ const Hero = () => {
           >
             <motion.div
               className="relative"
-              animate={{ 
+              animate={{
                 y: [0, -15, 0],
                 rotate: [0, 1, -1, 0]
               }}
-              transition={{ 
-                duration: 6, 
+              transition={{
+                duration: 6,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
@@ -220,7 +220,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05, rotate: [0, 2, -2, 0] }}
                 transition={{ duration: 0.8 }}
               />
-              
+
               {/* 装饰性光晕 */}
               <div className="absolute -inset-4 bg-gradient-to-r from-capy-200 via-lotus-200 to-pond-200 rounded-3xl blur-xl opacity-60 -z-10" />
             </motion.div>
@@ -229,7 +229,7 @@ const Hero = () => {
             <motion.div
               className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-lotus-400 to-lotus-600 rounded-full flex items-center justify-center shadow-lg"
               animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-              transition={{ 
+              transition={{
                 rotate: { duration: 10, repeat: Infinity, ease: "linear" },
                 scale: { duration: 2, repeat: Infinity }
               }}
@@ -237,11 +237,11 @@ const Hero = () => {
             >
               <IconHeart size={24} className="text-white" />
             </motion.div>
-            
+
             <motion.div
               className="absolute -bottom-2 sm:-bottom-4 -left-2 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-pond-400 to-pond-600 rounded-full flex items-center justify-center shadow-lg"
               animate={{ rotate: -360, scale: [1, 1.2, 1] }}
-              transition={{ 
+              transition={{
                 rotate: { duration: 8, repeat: Infinity, ease: "linear" },
                 scale: { duration: 3, repeat: Infinity }
               }}
@@ -255,26 +255,26 @@ const Hero = () => {
 
       {/* 滚动提示 - 调整位置避免与图片重合 */}
       <motion.div
-        className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-1/2 transform -translate-x-1/2 z-20"
-        animate={{ 
+        className="hidden sm:block absolute bottom-8 sm:bottom-12 lg:bottom-16 left-1/2 transform -translate-x-1/2 z-20"
+        animate={{
           y: [0, 8, 0],
-          opacity: [0.4, 0.8, 0.4]
+          opacity: [0.6, 1, 0.6]
         }}
-        transition={{ 
-          duration: 3, 
+        transition={{
+          duration: 3,
           repeat: Infinity,
           ease: "easeInOut"
         }}
       >
         <div className="w-6 h-10 border-2 border-capy-400/60 rounded-full flex justify-center glass-morphism/50">
-                      <motion.div
-              className="w-1 h-3 bg-capy-400/70 rounded-full mt-2"
-            animate={{ 
+          <motion.div
+            className="w-1 h-3 bg-capy-400/70 rounded-full mt-2"
+            animate={{
               y: [0, 10, 0],
               scale: [1, 1.2, 1]
             }}
-            transition={{ 
-              duration: 2.5, 
+            transition={{
+              duration: 2.5,
               repeat: Infinity,
               ease: "easeInOut"
             }}
