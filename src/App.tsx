@@ -7,19 +7,20 @@ import Features from './components/Features'
 import CostumeGallery from './components/CostumeGallery'
 import Download from './components/Download'
 import Footer from './components/Footer'
-import FloatingCapy from './components/FloatingCapy'
 import LanguageDetector from './components/LanguageDetector'
 import { getRecommendedLanguage } from './utils/languageUtils'
 import ClickEffect from './components/ClickEffect'
 
+declare global {
+  interface Window {
+    GameEvent: {
+      emit: (event: string, data?: any) => void;
+    };
+  }
+}
+
 function App() {
-  const { i18n } = useTranslation()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
+  const { i18n } = useTranslation();
   // 初始化语言检测和设置
   useEffect(() => {
     // 获取推荐的语言（优先用户设置，其次浏览器检测）
@@ -34,10 +35,8 @@ function App() {
     }
   }, [i18n.language])
 
-  if (!mounted) return null
-
   return (
-    <motion.div 
+    <motion.div
       className="min-h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -52,7 +51,6 @@ function App() {
         <Download />
       </main>
       <Footer />
-      <FloatingCapy />
       <ClickEffect />
     </motion.div>
   )

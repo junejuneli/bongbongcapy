@@ -11,7 +11,7 @@ const Hero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={{
-          backgroundImage: `url('/图片/背景图1438.jpg')`,
+          backgroundImage: `url('/images/背景图1438.jpg')`,
         }}
       />
 
@@ -214,7 +214,7 @@ const Hero = () => {
               }}
             >
               <motion.img
-                src="/图片/主宣传图1232.jpg"
+                src="/images/主宣传图1232.jpg"
                 alt={t('hero.title')}
                 className="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto rounded-3xl shadow-2xl"
                 whileHover={{ scale: 1.05, rotate: [0, 2, -2, 0] }}

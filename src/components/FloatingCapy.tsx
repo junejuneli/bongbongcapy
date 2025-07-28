@@ -102,7 +102,7 @@ const FloatingCapy = () => {
               }}
             >
               <img
-                src="/图片/icon圆.png"
+                src="/images/icon圆.png"
                 alt="卡皮巴拉"
                 className="w-full h-full object-cover"
               />

@@ -55,7 +55,7 @@ const Navigation = () => {
             whileTap={{ scale: 0.95 }}
           >
             <motion.img
-              src="/图片/icon圆.png"
+              src="/images/icon圆.png"
               alt="敲好运 Logo"
               className="w-12 h-12 rounded-full shadow-lg ring-2 ring-white/30"
               whileHover={{ rotate: [0, 5, -5, 0] }}

@@ -9,52 +9,61 @@ interface ClickEffectItem {
   timestamp: number
 }
 
+// 特效图片列表
+const effectImages = [
+  '/capy_skins/qf_hz5/qf_hz5_q_1_gd.png',
+  '/capy_skins/qf_hz5/qf_hz5_q_2_money.png',
+  '/capy_skins/qf_hz5/qf_hz5_q_3_boom.png',
+  '/capy_skins/qf_hz5/qf_hz5_q_4_lucky.png',
+  '/capy_skins/qf_hz5/qf_hz5_q_5_sq.png',
+  '/capy_skins/qf_hz5/qf_hz5_q_6_dingdan.png',
+  '/capy_skins/qf_hz5/qf_hz5_q_7_haha.png',
+  '/capy_skins/qf_hz5/qf_hz5_q_8_shanguang.png',
+  '/capy_skins/qf_hz5/qf_hz5_q_9_dayan.png',
+  '/capy_skins/qf_hz5/qf_hz5_q_10_zhonzhi.png',
+  '/capy_skins/qf_hz5/qf_hz5_q_11_jinbi.png',
+  '/capy_skins/qf_hz5/qf_hz5_q_12_facai.png'
+]
+
 const ClickEffect = () => {
   const [effects, setEffects] = useState<ClickEffectItem[]>([])
-
-  // 特效图片列表
-  const effectImages = [
-    '/服装/qf_hz5/qf_hz5_q/qf_hz5_q_1_gd.png',
-    '/服装/qf_hz5/qf_hz5_q/qf_hz5_q_2_money.png',
-    '/服装/qf_hz5/qf_hz5_q/qf_hz5_q_3_boom.png',
-    '/服装/qf_hz5/qf_hz5_q/qf_hz5_q_3_shanguang.png',
-    '/服装/qf_hz5/qf_hz5_q/qf_hz5_q_4_lucky.png',
-    '/服装/qf_hz5/qf_hz5_q/qf_hz5_q_5_sq.png',
-    '/服装/qf_hz5/qf_hz5_q/qf_hz5_q_6_dingdan.png',
-    '/服装/qf_hz5/qf_hz5_q/qf_hz5_q_7_haha.png'
-  ]
 
   // 计算最佳显示位置，避免超出屏幕边界
   const calculateOptimalPosition = (clickX: number, clickY: number) => {
     const effectSize = 80 // 特效图片大小
     const margin = 20 // 边距
     const maxOffset = 60 // 最大偏移距离
-    
+
     // 在点击位置周围随机偏移
     const randomOffsetX = (Math.random() - 0.5) * maxOffset * 2
     const randomOffsetY = (Math.random() - 0.5) * maxOffset * 2
-    
+
     let x = clickX + randomOffsetX
     let y = clickY + randomOffsetY
-    
+
     // 确保不超出屏幕边界
     const screenWidth = window.innerWidth
     const screenHeight = window.innerHeight
-    
+
     x = Math.max(margin, Math.min(x, screenWidth - effectSize - margin))
     y = Math.max(margin, Math.min(y, screenHeight - effectSize - margin))
-    
+
     return { x, y }
   }
 
   // 处理点击事件
   const handleClick = useCallback((event: MouseEvent) => {
+    // 看看有没有 iframe 内嵌
+    if (window.GameEvent) {
+      window.GameEvent.emit('press-pet')
+    }
+
     const { clientX, clientY } = event
     const { x, y } = calculateOptimalPosition(clientX, clientY)
-    
+
     // 随机选择特效图片
     const randomImage = effectImages[Math.floor(Math.random() * effectImages.length)]
-    
+
     const newEffect: ClickEffectItem = {
       id: `effect-${Date.now()}-${Math.random()}`,
       x,
@@ -62,9 +71,9 @@ const ClickEffect = () => {
       image: randomImage,
       timestamp: Date.now()
     }
-    
+
     setEffects(prev => [...prev, newEffect])
-    
+
     // 2秒后自动移除特效
     setTimeout(() => {
       setEffects(prev => prev.filter(effect => effect.id !== newEffect.id))
@@ -85,7 +94,7 @@ const ClickEffect = () => {
       const now = Date.now()
       setEffects(prev => prev.filter(effect => now - effect.timestamp < 3000))
     }, 1000)
-    
+
     return () => clearInterval(cleanup)
   }, [])
 
@@ -100,22 +109,22 @@ const ClickEffect = () => {
               left: effect.x - 40, // 居中显示
               top: effect.y - 40,
             }}
-            initial={{ 
-              opacity: 0, 
-              scale: 0, 
+            initial={{
+              opacity: 0,
+              scale: 0,
               y: 20
             }}
-            animate={{ 
-              opacity: [0, 1, 1, 0], 
-              scale: [0, 1.2, 1, 0.8], 
+            animate={{
+              opacity: [0, 1, 1, 0],
+              scale: [0, 1.2, 1, 0.8],
               y: [0, -30, -50]
             }}
-            exit={{ 
-              opacity: 0, 
+            exit={{
+              opacity: 0,
               scale: 0,
               y: -60
             }}
-            transition={{ 
+            transition={{
               duration: 1.5,
               ease: "easeOut",
               times: [0, 0.2, 0.8, 1]
@@ -138,7 +147,7 @@ const ClickEffect = () => {
                 (e.target as HTMLImageElement).style.display = 'none'
               }}
             />
-            
+
             {/* 光晕效果 */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-capy-400/30 via-lotus-400/30 to-pond-400/30 rounded-full blur-lg -z-10"
@@ -151,7 +160,7 @@ const ClickEffect = () => {
                 ease: "easeOut"
               }}
             />
-            
+
             {/* 星星粒子效果 */}
             {Array.from({ length: 5 }).map((_, i) => (
               <motion.div

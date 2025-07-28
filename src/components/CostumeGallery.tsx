@@ -138,7 +138,7 @@ const CostumeGallery = () => {
                     alt={costume.name[i18n.language as keyof typeof costume.name]}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = '/图片/icon圆.png'
+                      (e.target as HTMLImageElement).src = '/images/icon圆.png'
                     }}
                     whileHover={{ rotate: [0, 2, -2, 0] }}
                     transition={{ duration: 0.5 }}
