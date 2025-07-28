@@ -203,15 +203,22 @@ const Hero = () => {
           >
             <motion.div
               className="relative"
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
+              animate={{ 
+                y: [0, -15, 0],
+                rotate: [0, 1, -1, 0]
+              }}
+              transition={{ 
+                duration: 6, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
             >
               <motion.img
                 src="/图片/主宣传图1232.jpg"
                 alt={t('hero.title')}
                 className="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto rounded-3xl shadow-2xl"
-                whileHover={{ scale: 1.02, rotate: [0, 1, -1, 0] }}
-                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.05, rotate: [0, 2, -2, 0] }}
+                transition={{ duration: 0.8 }}
               />
               
               {/* 装饰性光晕 */}
@@ -249,14 +256,28 @@ const Hero = () => {
       {/* 滚动提示 - 调整位置避免与图片重合 */}
       <motion.div
         className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-1/2 transform -translate-x-1/2 z-20"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        animate={{ 
+          y: [0, 8, 0],
+          opacity: [0.7, 1, 0.7]
+        }}
+        transition={{ 
+          duration: 3, 
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
       >
         <div className="w-6 h-10 border-2 border-capy-400 rounded-full flex justify-center glass-morphism">
           <motion.div
             className="w-1 h-3 bg-capy-400 rounded-full mt-2"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            animate={{ 
+              y: [0, 10, 0],
+              scale: [1, 1.2, 1]
+            }}
+            transition={{ 
+              duration: 2.5, 
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
           />
         </div>
       </motion.div>
