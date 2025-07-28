@@ -258,7 +258,7 @@ const Hero = () => {
         className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-1/2 transform -translate-x-1/2 z-20"
         animate={{ 
           y: [0, 8, 0],
-          opacity: [0.7, 1, 0.7]
+          opacity: [0.4, 0.8, 0.4]
         }}
         transition={{ 
           duration: 3, 
@@ -266,9 +266,9 @@ const Hero = () => {
           ease: "easeInOut"
         }}
       >
-        <div className="w-6 h-10 border-2 border-capy-400 rounded-full flex justify-center glass-morphism">
-          <motion.div
-            className="w-1 h-3 bg-capy-400 rounded-full mt-2"
+        <div className="w-6 h-10 border-2 border-capy-400/60 rounded-full flex justify-center glass-morphism/50">
+                      <motion.div
+              className="w-1 h-3 bg-capy-400/70 rounded-full mt-2"
             animate={{ 
               y: [0, 10, 0],
               scale: [1, 1.2, 1]
