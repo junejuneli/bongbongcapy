@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { IconSparkles, IconCrown, IconShirt, IconHeart, IconSword, IconMusic, IconFlower, IconWriting } from '@tabler/icons-react'
+import { IconSparkles, IconCrown, IconShirt, IconSword, IconMusic, IconFlower, IconWriting } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
 import { costumes } from '../data/costumes'
 
