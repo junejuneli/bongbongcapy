@@ -55,7 +55,12 @@ const ClickEffect = () => {
   const handleClick = useCallback((event: MouseEvent) => {
     // 看看有没有 iframe 内嵌
     if (window.GameEvent) {
-      window.GameEvent.emit('press-pet')
+      window.GameEvent.emit('press-pet');
+
+      //  0.1的概率切换随机装扮
+      // if (Math.random() < 0.1) {
+      //   window.GameEvent.emit('change-random-skin', { owned: false })
+      // }
     }
 
     const { clientX, clientY } = event

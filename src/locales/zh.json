@@ -106,6 +106,10 @@
           "categories": {
         "headwear": "头饰",
         "clothing": "服装",
+        "handheld": "手持",
+        "woodblock": "木鱼",
+        "text": "敲击文字",
+        "lotus": "莲花底座",
         "merit": "功德"
       },
     "rarity": {
@@ -213,4 +217,4 @@
     "rating": "评分", 
     "awards": "获奖作品"
   }
-} 
+}

@@ -16,6 +16,14 @@ declare global {
     GameEvent: {
       emit: (event: string, data?: any) => void;
     };
+    /**
+     * // 敲击
+     * window.GameEvent.emit('press-pet')
+     * // 切换随机装扮
+     * window.GameEvent.emit('change-random-skin',{owned:false})
+     * // 切换指定的装扮
+     * window.GameEvent.emit('render-skin',{type: 'ownId'})
+     */
   }
 }
 

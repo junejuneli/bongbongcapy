@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { IconSparkles, IconCrown, IconShirt, IconHeart } from '@tabler/icons-react'
+import { IconSparkles, IconCrown, IconShirt, IconHeart, IconSword, IconMusic, IconFlower, IconWriting } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
 import { costumes } from '../data/costumes'
 
@@ -11,7 +11,10 @@ const CostumeGallery = () => {
   const categories = [
     { id: 'headwear', name: t('costumes.categories.headwear'), icon: IconCrown },
     { id: 'clothing', name: t('costumes.categories.clothing'), icon: IconShirt },
-    { id: 'merit', name: t('costumes.categories.merit'), icon: IconHeart },
+    { id: 'handheld', name: t('costumes.categories.handheld'), icon: IconSword },
+    { id: 'woodblock', name: t('costumes.categories.woodblock'), icon: IconMusic },
+    { id: 'text', name: t('costumes.categories.text'), icon: IconWriting },
+    { id: 'lotus', name: t('costumes.categories.lotus'), icon: IconFlower },
   ]
 
   const filteredCostumes = costumes.filter(costume => costume.category === selectedCategory)
@@ -60,13 +63,13 @@ const CostumeGallery = () => {
             <IconSparkles size={20} className="text-lotus-600" />
             <span className="text-lotus-700 font-cute font-semibold">{t('costumes.badge')}</span>
           </motion.div>
-          
+
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-display font-bold mb-4 sm:mb-6">
             <span className="text-gradient">{t('costumes.title')}</span>
             <br />
             <span className="text-gray-800">{t('costumes.subtitle')}</span>
           </h2>
-          
+
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-body px-4">
             {t('costumes.description')}
           </p>
@@ -80,16 +83,15 @@ const CostumeGallery = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="flex flex-wrap justify-center glass-morphism rounded-full p-1 sm:p-2 shadow-xl border border-white/40 gap-1 sm:gap-0">
+          <div className="flex flex-wrap justify-center glass-morphism rounded-full p-1 sm:p-2 shadow-xl border border-white/40 gap-1 sm:gap-2">
             {categories.map((category) => (
               <motion.button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full font-cute font-medium transition-all duration-300 text-sm sm:text-base ${
-                  selectedCategory === category.id
-                    ? 'bg-gradient-to-r from-lotus-500 to-pond-500 text-white shadow-lg'
-                    : 'text-gray-600 hover:text-lotus-600 hover:bg-white/30'
-                }`}
+                className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 sm:py-3 rounded-full font-cute font-medium transition-all duration-300 text-xs sm:text-sm ${selectedCategory === category.id
+                  ? 'bg-gradient-to-r from-lotus-500 to-pond-500 text-white shadow-lg'
+                  : 'text-gray-600 hover:text-lotus-600 hover:bg-white/30'
+                  }`}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -97,7 +99,7 @@ const CostumeGallery = () => {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <category.icon size={16} className="sm:w-[18px] sm:h-[18px]" />
+                  <category.icon size={14} className="sm:w-[16px] sm:h-[16px]" />
                 </motion.div>
                 <span className="hidden xs:inline">{category.name}</span>
               </motion.button>
@@ -116,27 +118,36 @@ const CostumeGallery = () => {
             transition={{ duration: 0.5 }}
           >
             {filteredCostumes.map((costume, index) => (
-                              <motion.div
-                  key={costume.id}
-                  className={`card-float p-2 sm:p-3 cursor-pointer group border-2 ${getRarityBorder(costume.rarity)}`}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: index * 0.02 }}
-                  whileHover={{ y: -8, scale: 1.03 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => console.log('查看服装:', costume.name[i18n.language as keyof typeof costume.name])}
-                >
+              <motion.div
+                key={costume.id}
+                className={`card-float p-2 sm:p-3 cursor-pointer group border-2 ${getRarityBorder(costume.rarity)}`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: index * 0.02 }}
+                whileHover={{ y: -8, scale: 1.03 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  console.log('查看服装:', costume, costume.name[i18n.language as keyof typeof costume.name])
+
+                  // 切换装扮
+                  if (window.GameEvent) {
+                    const ownId = costume.id;
+                    const type = ownId.split('-')[0];
+                    window.GameEvent.emit('render-skin', { [type]: costume.id })
+                  }
+                }}
+              >
                 {/* 稀有度标签 */}
                 <div className={`absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r ${getRarityColor(costume.rarity)}`}>
                   {t(`costumes.rarity.${costume.rarity}`)}
                 </div>
 
-                {/* 服装图片 - 更小的尺寸 */}
-                <div className="aspect-square mb-2 sm:mb-3 rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
+                {/* 服装图片 */}
+                <div className="aspect-square mb-2 sm:mb-3 rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 p-2">
                   <motion.img
                     src={costume.image}
                     alt={costume.name[i18n.language as keyof typeof costume.name]}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = '/images/icon圆.png'
                     }}
@@ -202,4 +213,4 @@ const CostumeGallery = () => {
   )
 }
 
-export default CostumeGallery 
+export default CostumeGallery

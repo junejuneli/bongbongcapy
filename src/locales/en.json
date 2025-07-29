@@ -106,6 +106,10 @@
           "categories": {
         "headwear": "Headwear",
         "clothing": "Clothing",
+        "handheld": "Handheld",
+        "woodblock": "Woodblock",
+        "text": "Text",
+        "lotus": "Lotus",
         "merit": "Merit"
       },
     "rarity": {
@@ -213,4 +217,4 @@
     "rating": "Rating", 
     "awards": "Awards Won"
   }
-} 
+}

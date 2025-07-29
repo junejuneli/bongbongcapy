@@ -153,36 +153,35 @@ const Download = () => {
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                 whileHover={platform.available ? { y: -5, scale: 1.02 } : {}}
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-6">
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
+                <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-4">
+                  <div className="flex items-center gap-4 sm:gap-6 flex-1 min-w-0">
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center ${
                       platform.available 
                         ? 'bg-gradient-to-r from-capy-500 to-lotus-500' 
                         : 'bg-gray-400'
                     }`}>
-                      <platform.icon className="w-8 h-8 text-white" />
+                      <platform.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-800 mb-2 flex items-center gap-3 font-display">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-2xl font-bold text-gray-800 mb-1 sm:mb-2 flex items-center gap-3 font-display">
                         {platform.name}
-
                       </h3>
-                      <p className="text-gray-600 font-body">{platform.description}</p>
+                      <p className="text-sm sm:text-base text-gray-600 font-body">{platform.description}</p>
                     </div>
                   </div>
                   
                   {platform.available ? (
                     <motion.button
-                      className="btn-primary px-8 py-4"
+                      className="btn-primary px-3 py-2 sm:px-6 sm:py-3 text-sm sm:text-base whitespace-nowrap flex-shrink-0"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => window.open(platform.downloadUrl, '_blank')}
                     >
-                      <DownloadIcon className="w-5 h-5 mr-2" />
+                      <DownloadIcon className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
                       {t('download.download')}
                     </motion.button>
                   ) : (
-                    <div className="px-8 py-4 bg-gray-200 text-gray-500 rounded-full font-semibold font-cute">
+                    <div className="px-3 py-2 sm:px-6 sm:py-3 bg-gray-200 text-gray-500 rounded-full font-semibold font-cute text-sm sm:text-base whitespace-nowrap flex-shrink-0">
                       {t('download.waiting')}
                     </div>
                   )}
@@ -236,4 +235,4 @@ const Download = () => {
   )
 }
 
-export default Download 
+export default Download

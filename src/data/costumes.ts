@@ -5,7 +5,7 @@ export interface Costume {
     en: string
     ja: string
   }
-  category: 'headwear' | 'clothing' | 'merit'
+  category: 'headwear' | 'clothing' | 'handheld' | 'woodblock' | 'text' | 'lotus'
   rarity: 'legendary' | 'epic' | 'rare' | 'common'
   image: string
   description: {
@@ -16,65 +16,49 @@ export interface Costume {
 }
 
 export const costumes: Costume[] = [
-  // 头饰类
+  // 头饰类 (Head = 1) - 6个高品质装扮
   {
-    id: 'qf_hz1_1',
+    id: '1-8',
     name: {
-      zh: '橘子仙子',
-      en: 'Orange Fairy',
-      ja: 'オレンジフェアリー'
+      zh: '天使',
+      en: 'Angel',
+      ja: '天使'
     },
     category: 'headwear',
     rarity: 'legendary',
-    image: '/服装/qf_hz1/qf_hz1_1_juzi.png',
+    image: '/capy_skins/qf_hz1/qf_hz1_8_tianshi.png',
     description: {
-      zh: '橘香满园，仙气飘飘',
-      en: 'Orange fragrance, fairy aura',
-      ja: 'オレンジの香り、仙気漂う'
+      zh: '圣洁天使光环，神圣不可侵犯',
+      en: 'Holy angel halo, sacred and inviolable',
+      ja: '聖なる天使の光輪、神聖不可侵'
     }
   },
   {
-    id: 'qf_hz1_3',
+    id: '1-19',
     name: {
-      zh: '官帽威严',
-      en: 'Official Hat',
-      ja: '官帽威厳'
-    },
-    category: 'headwear',
-    rarity: 'rare',
-    image: '/服装/qf_hz1/qf_hz1_3_guanmao.png',
-    description: {
-      zh: '古代官员威严形象',
-      en: 'Ancient official dignity',
-      ja: '古代官僚の威厳'
-    }
-  },
-  {
-    id: 'qf_hz1_4',
-    name: {
-      zh: '厨师帽',
-      en: 'Chef Hat',
-      ja: 'シェフハット'
-    },
-    category: 'headwear',
-    rarity: 'common',
-    image: '/服装/qf_hz1/qf_hz1_4_chushimao.png',
-    description: {
-      zh: '专业厨师装扮',
-      en: 'Professional chef look',
-      ja: 'プロシェフスタイル'
-    }
-  },
-  {
-    id: 'qf_hz1_6',
-    name: {
-      zh: '王冠荣耀',
-      en: 'Royal Crown',
-      ja: '王冠の栄光'
+      zh: '财神',
+      en: 'Richgod',
+      ja: '財神'
     },
     category: 'headwear',
     rarity: 'legendary',
-    image: '/服装/qf_hz1/qf_hz1_6_wangguan.png',
+    image: '/capy_skins/qf_hz1/qf_hz1_12_caishenmao.png',
+    description: {
+      zh: '财神降临，招财进宝',
+      en: 'God of wealth descends, bringing fortune',
+      ja: '財神降臨、招財進寶'
+    }
+  },
+  {
+    id: '1-4',
+    name: {
+      zh: '王冠',
+      en: 'Crown',
+      ja: '王冠'
+    },
+    category: 'headwear',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz1/qf_hz1_6_wangguan.png',
     description: {
       zh: '王者风范，至高荣誉',
       en: 'Royal majesty, supreme honor',
@@ -82,183 +66,541 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: 'qf_hz1_8',
+    id: '1-14',
     name: {
-      zh: '天使光环',
-      en: 'Angel Halo',
-      ja: '天使の光輪'
+      zh: '垃圾盖',
+      en: 'Tub Lid',
+      ja: 'ゴミ蓋'
     },
     category: 'headwear',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz1/qf_hz1_9_lajigai.png',
+    description: {
+      zh: '环保主题，创意十足',
+      en: 'Environmental theme, creative',
+      ja: '環境テーマ、創造的'
+    }
+  },
+  {
+    id: '1-15',
+    name: {
+      zh: '便便',
+      en: 'Poop',
+      ja: 'うんち'
+    },
+    category: 'headwear',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz1/qf_hz1_14_baba.png',
+    description: {
+      zh: '搞怪造型，幽默风趣',
+      en: 'Funny shape, humorous',
+      ja: 'おかしな形、ユーモラス'
+    }
+  },
+  {
+    id: '1-16',
+    name: {
+      zh: '墨镜',
+      en: 'Shades',
+      ja: 'サングラス'
+    },
+    category: 'headwear',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz1/qf_hz1_13_mojing.png',
+    description: {
+      zh: '酷炫墨镜，时尚潮流',
+      en: 'Cool sunglasses, fashionable',
+      ja: 'クールなサングラス、ファッショナブル'
+    }
+  },
+
+  // 身体类 (Body = 2) - 6个高品质装扮 - 使用预览图
+  {
+    id: '2-7',
+    name: {
+      zh: '花棉袄',
+      en: 'Thermal',
+      ja: '花綿襖'
+    },
+    category: 'clothing',
     rarity: 'legendary',
-    image: '/服装/qf_hz1/qf_hz1_8_tianshi.png',
+    image: '/capy_skins/qf_hz2/preview/icon_hz2_7.png',
     description: {
-      zh: '圣洁天使，纯净治愈',
-      en: 'Holy angel, pure healing',
-      ja: '聖なる天使、純粋な癒し'
+      zh: '传统花棉袄，温暖如春',
+      en: 'Traditional thermal coat, warm as spring',
+      ja: '伝統的な花綿襖、春のように暖かい'
+    }
+  },
+  {
+    id: '2-16',
+    name: {
+      zh: '财神服',
+      en: 'Rich God',
+      ja: '財神服'
+    },
+    category: 'clothing',
+    rarity: 'legendary',
+    image: '/capy_skins/qf_hz2/preview/icon_hz2_9.png',
+    description: {
+      zh: '财神专属服装，金光闪闪',
+      en: 'Exclusive god of wealth outfit, golden',
+      ja: '財神専用服、金色に輝く'
+    }
+  },
+  {
+    id: '2-6',
+    name: {
+      zh: '木乃伊',
+      en: 'Mummy',
+      ja: 'ミイラ'
+    },
+    category: 'clothing',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz2/preview/icon_hz2_6.png',
+    description: {
+      zh: '神秘木乃伊，古埃及风情',
+      en: 'Mysterious mummy, ancient Egyptian style',
+      ja: '神秘的なミイラ、古代エジプト風'
+    }
+  },
+  {
+    id: '2-15',
+    name: {
+      zh: '垃圾桶',
+      en: 'Bin',
+      ja: 'ゴミ箱'
+    },
+    category: 'clothing',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz2/preview/icon_hz2_8.png',
+    description: {
+      zh: '环保垃圾桶，绿色生活',
+      en: 'Eco-friendly bin, green living',
+      ja: 'エコなゴミ箱、グリーンライフ'
+    }
+  },
+  {
+    id: '2-1',
+    name: {
+      zh: '短袖',
+      en: 'T-shirt',
+      ja: 'Tシャツ'
+    },
+    category: 'clothing',
+    rarity: 'rare',
+    image: '/capy_skins/qf_hz2/preview/icon_hz2_1.png',
+    description: {
+      zh: '简约短袖，清爽舒适',
+      en: 'Simple T-shirt, fresh and comfortable',
+      ja: 'シンプルなTシャツ、爽やかで快適'
+    }
+  },
+  {
+    id: '2-2',
+    name: {
+      zh: '草裙',
+      en: 'Hula Skirt',
+      ja: 'フラスカート'
+    },
+    category: 'clothing',
+    rarity: 'rare',
+    image: '/capy_skins/qf_hz2/preview/icon_hz2_3.png',
+    description: {
+      zh: '热带草裙，度假风情',
+      en: 'Tropical hula skirt, vacation vibes',
+      ja: 'トロピカルフラスカート、バケーション気分'
     }
   },
 
-  // 服装类
+  // 手持类 (Shouchi = 3) - 6个高品质装扮
   {
-    id: 'qf_hz1_2',
+    id: '3-10',
     name: {
-      zh: '唐僧法袍',
-      en: 'Monk Robe',
-      ja: '唐僧法衣'
+      zh: '灯笼',
+      en: 'Lantern',
+      ja: '提灯'
     },
-    category: 'clothing',
+    category: 'handheld',
+    rarity: 'legendary',
+    image: '/capy_skins/qf_hz3/qf_hz3_9_dengl.png',
+    description: {
+      zh: '传统红灯笼，禧年吉祥',
+      en: 'Traditional red lantern, festive and auspicious',
+      ja: '伝統的な赤提灯、祝祭的で縁起が良い'
+    }
+  },
+  {
+    id: '3-13',
+    name: {
+      zh: '骨头',
+      en: 'Bone',
+      ja: '骨'
+    },
+    category: 'handheld',
+    rarity: 'legendary',
+    image: '/capy_skins/qf_hz3/qf_hz3_11_gutou.png',
+    description: {
+      zh: '原始骨头，野性力量',
+      en: 'Primitive bone, wild power',
+      ja: '原始的な骨、野生の力'
+    }
+  },
+  {
+    id: '3-5',
+    name: {
+      zh: '平底锅',
+      en: 'Pan',
+      ja: 'フライパン'
+    },
+    category: 'handheld',
     rarity: 'epic',
-    image: '/服装/qf_hz1/qf_hz1_2_tangseng.png',
+    image: '/capy_skins/qf_hz3/qf_hz3_4_guo.png',
     description: {
-      zh: '西游记主题，庄严神圣',
-      en: 'Journey to the West theme, solemn and sacred',
-      ja: '西遊記テーマ、荘厳神聖'
+      zh: '厨房神器，美食制作',
+      en: 'Kitchen artifact, food making',
+      ja: 'キッチンの神器、料理作り'
     }
   },
   {
-    id: 'qf_hz1_7',
+    id: '3-7',
     name: {
-      zh: '加法铠甲',
-      en: 'Math Armor',
-      ja: '加算アーマー'
+      zh: '大葱',
+      en: 'Scallion',
+      ja: '大葱'
     },
-    category: 'clothing',
+    category: 'handheld',
     rarity: 'epic',
-    image: '/服装/qf_hz1/qf_hz1_7_jiafa.png',
+    image: '/capy_skins/qf_hz3/qf_hz3_6_dacong.png',
     description: {
-      zh: '数学主题，智慧力量',
-      en: 'Math theme, wisdom and power',
-      ja: '数学テーマ、知恵と力'
+      zh: '新鲜大葱，健康生活',
+      en: 'Fresh scallion, healthy life',
+      ja: '新鮮な大葱、健康的な生活'
     }
   },
   {
-    id: 'qf_hz3_2',
+    id: '3-11',
     name: {
-      zh: '胡萝卜装',
-      en: 'Carrot Suit',
-      ja: 'ニンジンスーツ'
+      zh: '棒棒糖',
+      en: 'Pop',
+      ja: 'ロリポップ'
     },
-    category: 'clothing',
-    rarity: 'common',
-    image: '/服装/qf_hz3/qf_hz3_2_huluobo.png',
-    description: {
-      zh: '健康营养，充满活力',
-      en: 'Healthy nutrition, full of vitality',
-      ja: '健康栄養、活力満点'
-    }
-  },
-  {
-    id: 'qf_hz3_3',
-    name: {
-      zh: '竹子清装',
-      en: 'Bamboo Outfit',
-      ja: '竹清装'
-    },
-    category: 'clothing',
-    rarity: 'rare',
-    image: '/服装/qf_hz3/qf_hz3_3_zhuzi.png',
-    description: {
-      zh: '高洁竹子，君子风范',
-      en: 'Noble bamboo, gentleman style',
-      ja: '高潔な竹、君子風格'
-    }
-  },
-  {
-    id: 'qf_hz3_4',
-    name: {
-      zh: '竹影摇曳',
-      en: 'Swaying Bamboo',
-      ja: '竹影揺曳'
-    },
-    category: 'clothing',
-    rarity: 'rare',
-    image: '/服装/qf_hz3/qf_hz3_4_zhuzi.png',
-    description: {
-      zh: '竹影优雅，动人心弦',
-      en: 'Elegant bamboo shadow, touching',
-      ja: '竹影優雅、心に響く'
-    }
-  },
-  {
-    id: 'qf_hz3_7',
-    name: {
-      zh: '山峦叠翠',
-      en: 'Mountain Layers',
-      ja: '山峦疊翠'
-    },
-    category: 'clothing',
+    category: 'handheld',
     rarity: 'epic',
-    image: '/服装/qf_hz3/qf_hz3_7_san.png',
+    image: '/capy_skins/qf_hz3/qf_hz3_8_tangg.png',
     description: {
-      zh: '山水画风，意境深远',
-      en: 'Landscape painting style, profound',
-      ja: '山水画風、意境深遠'
+      zh: '甜蜜棒棒糖，童年回忆',
+      en: 'Sweet lollipop, childhood memories',
+      ja: '甘いロリポップ、子供時代の思い出'
+    }
+  },
+  {
+    id: '3-14',
+    name: {
+      zh: '咸鱼',
+      en: 'Salt Fish',
+      ja: '塩魚'
+    },
+    category: 'handheld',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz3/qf_hz3_10_xianyu.png',
+    description: {
+      zh: '咸鱼翻身，逆袭人生',
+      en: 'Salted fish turns over, life comeback',
+      ja: '塩魚がひっくり返る、人生の逆転'
     }
   },
 
-  // 功德类
+  // 木鱼类 (Muyu = 4) - 6个高品质装扮
   {
-    id: 'qf_hz1_5',
+    id: '4-7',
     name: {
-      zh: '螺旋奇迹',
-      en: 'Spiral Miracle',
-      ja: 'スパイラルミラクル'
+      zh: '小屁屁',
+      en: 'Lit-Butt',
+      ja: '小さなお尻'
     },
-    category: 'merit',
-    rarity: 'rare',
-    image: '/服装/qf_hz1/qf_hz1_5_luoxuan.png',
+    category: 'woodblock',
+    rarity: 'legendary',
+    image: '/capy_skins/qf_hz4/qf_hz4_3_kejipi.png',
     description: {
-      zh: '神秘螺旋，奇妙力量',
-      en: 'Mysterious spiral, magical power',
-      ja: '神秘スパイラル、奇跡の力'
+      zh: '可爱小屁屁，萌化人心',
+      en: 'Cute little butt, melting hearts',
+      ja: 'かわいい小さなお尻、心を溶かす'
     }
   },
   {
-    id: 'qf_hz3_1',
+    id: '4-9',
     name: {
-      zh: '田园小麦',
-      en: 'Pastoral Wheat',
-      ja: '田園小麦'
+      zh: '麻将',
+      en: 'Mahjong',
+      ja: '麻雀'
     },
-    category: 'merit',
-    rarity: 'common',
-    image: '/服装/qf_hz3/qf_hz3_1_my.png',
+    category: 'woodblock',
+    rarity: 'legendary',
+    image: '/capy_skins/qf_hz4/qf_hz4_9_majiang.png',
     description: {
-      zh: '朴实田园，回归自然',
-      en: 'Simple pastoral, return to nature',
-      ja: '素朴田園、自然回帰'
+      zh: '传统麻将，智慧博弈',
+      en: 'Traditional mahjong, wisdom game',
+      ja: '伝統的な麻雀、知恵のゲーム'
     }
   },
   {
-    id: 'qf_hz3_5',
+    id: '4-4',
     name: {
-      zh: '狼牙威武',
-      en: 'Wolf Fang Power',
-      ja: '狼牙威武'
+      zh: '元宝',
+      en: 'Yuan Bao',
+      ja: '元宝'
     },
-    category: 'merit',
+    category: 'woodblock',
     rarity: 'epic',
-    image: '/服装/qf_hz3/qf_hz3_5_langya.png',
+    image: '/capy_skins/qf_hz4/qf_hz4_12_yuanbao.png',
     description: {
-      zh: '野性力量，霸气十足',
-      en: 'Wild power, mighty and domineering',
-      ja: '野性の力、覇気十分'
+      zh: '古代元宝，财富象征',
+      en: 'Ancient yuan bao, symbol of wealth',
+      ja: '古代の元宝、富の象徴'
     }
   },
   {
-    id: 'qf_hz3_6',
+    id: '4-8',
     name: {
-      zh: '大葱清香',
-      en: 'Fresh Scallion',
-      ja: '大葱清香'
+      zh: '电视',
+      en: 'TV',
+      ja: 'テレビ'
     },
-    category: 'merit',
-    rarity: 'common',
-    image: '/服装/qf_hz3/qf_hz3_6_dacong.png',
+    category: 'woodblock',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz4/qf_hz4_8_dianshi.png',
     description: {
-      zh: '日常蔬菜，生活气息',
-      en: 'Daily vegetable, life atmosphere',
-      ja: '日常野菜、生活の香り'
+      zh: '复古电视，怀旧情怀',
+      en: 'Retro TV, nostalgic feelings',
+      ja: 'レトロテレビ、ノスタルジックな気持ち'
+    }
+  },
+  {
+    id: '4-10',
+    name: {
+      zh: '存钱罐',
+      en: 'Piggy',
+      ja: '貯金箱'
+    },
+    category: 'woodblock',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz4/qf_hz4_10_cunqg.png',
+    description: {
+      zh: '可爱存钱罐，理财好习惯',
+      en: 'Cute piggy bank, good financial habits',
+      ja: 'かわいい貯金箱、良い金融習慣'
+    }
+  },
+  {
+    id: '4-1',
+    name: {
+      zh: '木鱼',
+      en: 'Woodblock',
+      ja: '木魚'
+    },
+    category: 'woodblock',
+    rarity: 'rare',
+    image: '/capy_skins/qf_hz4/qf_hz4_1_my.png',
+    description: {
+      zh: '传统木鱼，禅意悠远',
+      en: 'Traditional woodblock, zen and distant',
+      ja: '伝統的な木魚、禅意深遠'
+    }
+  },
+
+  // 敲击文字类 (Text = 5) - 6个高品质装扮
+  {
+    id: '5-3',
+    name: {
+      zh: '哈哈哈',
+      en: 'Haha',
+      ja: '哈哈'
+    },
+    category: 'text',
+    rarity: 'legendary',
+    image: '/capy_skins/qf_hz5/qf_hz5_q_7_haha.png',
+    description: {
+      zh: '开心大笑，欢乐无限',
+      en: 'Laughing happily, endless joy',
+      ja: '楽しく笑う、無限の喜び'
+    }
+  },
+  {
+    id: '5-8',
+    name: {
+      zh: '發',
+      en: 'Fa',
+      ja: '發'
+    },
+    category: 'text',
+    rarity: 'legendary',
+    image: '/capy_skins/qf_hz5/qf_hz5_q_12_facai.png',
+    description: {
+      zh: '发财致富，好运连连',
+      en: 'Get rich, good luck',
+      ja: '金持ちになる、幸運続き'
+    }
+  },
+  {
+    id: '5-5',
+    name: {
+      zh: '订单',
+      en: 'Order',
+      ja: '注文'
+    },
+    category: 'text',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz5/qf_hz5_q_6_dingdan.png',
+    description: {
+      zh: '商业订单，生意兴隆',
+      en: 'Business order, prosperous business',
+      ja: 'ビジネス注文、商売繁盛'
+    }
+  },
+  {
+    id: '5-9',
+    name: {
+      zh: '金币',
+      en: 'Coin',
+      ja: '金貨'
+    },
+    category: 'text',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz5/qf_hz5_q_11_jinbi.png',
+    description: {
+      zh: '闪亮金币，财富积累',
+      en: 'Shiny gold coin, wealth accumulation',
+      ja: '輝く金貨、富の蓄積'
+    }
+  },
+  {
+    id: '5-10',
+    name: {
+      zh: '手指',
+      en: 'M-Finger',
+      ja: '指'
+    },
+    category: 'text',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz5/qf_hz5_q_10_zhonzhi.png',
+    description: {
+      zh: '指点江山，掌控全局',
+      en: 'Point to the world, control the overall situation',
+      ja: '世界を指差し、全体をコントロール'
+    }
+  },
+  {
+    id: '5-11',
+    name: {
+      zh: '眼睛',
+      en: 'Eye',
+      ja: '目'
+    },
+    category: 'text',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz5/qf_hz5_q_9_dayan.png',
+    description: {
+      zh: '明亮眼睛，洞察一切',
+      en: 'Bright eyes, see through everything',
+      ja: '明るい目、すべてを見通す'
+    }
+  },
+
+  // 莲花底座类 (Lotus = 6) - 6个高品质装扮
+  {
+    id: '6-6',
+    name: {
+      zh: '鸭子泳圈',
+      en: 'Swim Ring',
+      ja: 'アヒル浮き輪'
+    },
+    category: 'lotus',
+    rarity: 'legendary',
+    image: '/capy_skins/qf_hz6/qf_hz6_q_6_hh.png',
+    description: {
+      zh: '可爱鸭子泳圈，夏日清凉',
+      en: 'Cute duck swim ring, summer coolness',
+      ja: 'かわいいアヒル浮き輪、夏の涼しさ'
+    }
+  },
+  {
+    id: '6-9',
+    name: {
+      zh: '筋斗云',
+      en: 'Xiang Yun',
+      ja: '筋斗雲'
+    },
+    category: 'lotus',
+    rarity: 'legendary',
+    image: '/capy_skins/qf_hz6/qf_hz6_q_5_jindouy.png',
+    description: {
+      zh: '神话筋斗云，腾云驾雾',
+      en: 'Mythical somersault cloud, soaring through clouds',
+      ja: '神話の筋斗雲、雲を駆ける'
+    }
+  },
+  {
+    id: '6-4',
+    name: {
+      zh: '奥利奥',
+      en: 'Oreo',
+      ja: 'オレオ'
+    },
+    category: 'lotus',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz6/qf_hz6_h_7_aoliao.png',
+    description: {
+      zh: '经典奥利奥，甜蜜享受',
+      en: 'Classic Oreo, sweet enjoyment',
+      ja: 'クラシックオレオ、甘い楽しみ'
+    }
+  },
+  {
+    id: '6-7',
+    name: {
+      zh: '月饼',
+      en: 'Mooncake',
+      ja: '月餅'
+    },
+    category: 'lotus',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz6/qf_hz6_h_10_yuebing.png',
+    description: {
+      zh: '传统月饼，中秋团圆',
+      en: 'Traditional mooncake, Mid-Autumn reunion',
+      ja: '伝統的な月餅、中秋の再会'
+    }
+  },
+  {
+    id: '6-10',
+    name: {
+      zh: '莲花',
+      en: 'Lotus',
+      ja: '蓮花'
+    },
+    category: 'lotus',
+    rarity: 'epic',
+    image: '/capy_skins/qf_hz6/qf_hz6_q_3_zhixiang.png',
+    description: {
+      zh: '圣洁莲花，出淤泥而不染',
+      en: 'Sacred lotus, pure from mud',
+      ja: '聖なる蓮花、泥から清らか'
+    }
+  },
+  {
+    id: '6-1',
+    name: {
+      zh: '蒲团',
+      en: 'Futon',
+      ja: '蒲団'
+    },
+    category: 'lotus',
+    rarity: 'rare',
+    image: '/capy_skins/qf_hz6/qf_hz6_h_1_pt.png',
+    description: {
+      zh: '禅修蒲团，静心养性',
+      en: 'Meditation futon, calm mind',
+      ja: '禅修蒲団、心を静める'
     }
   }
-] 
+]

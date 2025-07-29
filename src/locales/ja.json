@@ -105,7 +105,11 @@
     "description": "豊富で多様な衣装システム、神話伝説から田園風景まで、一着一着がユニークなアート作品",
     "categories": {
       "headwear": "頭飾り",
-      "clothing": "衣装", 
+      "clothing": "衣装",
+      "handheld": "手持ち",
+      "woodblock": "木魚",
+      "text": "テキスト",
+      "lotus": "蓮の台座",
       "merit": "功徳"
     },
     "rarity": {
@@ -213,4 +217,4 @@
     "rating": "評価", 
     "awards": "受賞作品"
   }
-} 
+}
