@@ -2,19 +2,18 @@
   "version": "0.0.1",
   "productName": "敲敲敲好运",
   "buildTime": "2025-07-31T04:31:48.080Z",
-  "downloadUrl": "./versions/0.0.1/",
-  "artifacts": [
+  "downloads": [
     {
-      "original": "敲敲敲好运_0.0.1_aarch64.dmg",
-      "normalized": "敲敲敲好运-0.0.1-mac-universal.dmg",
+      "platform": "mac",
+      "downloadUrl": "/versions/0.0.1/敲敲敲好运-0.0.1-mac-universal.dmg",
       "size": 17171792,
-      "platform": "mac"
+      "filename": "敲敲敲好运-0.0.1-mac-universal.dmg"
     },
     {
-      "original": "敲敲敲好运_0.0.1_x64-setup.exe",
-      "normalized": "敲敲敲好运-0.0.1-windows-x64-setup.exe",
+      "platform": "windows",
+      "downloadUrl": "/versions/0.0.1/敲敲敲好运-0.0.1-windows-x64-setup.exe",
       "size": 13232364,
-      "platform": "windows"
+      "filename": "敲敲敲好运-0.0.1-windows-x64-setup.exe"
     }
   ]
 }

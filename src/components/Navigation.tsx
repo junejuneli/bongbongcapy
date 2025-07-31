@@ -21,7 +21,7 @@ const Navigation = () => {
   const navItems = [
     { name: t('nav.home'), href: '#hero' },
     { name: t('nav.features'), href: '#features' },
-    { name: t('nav.gameplay'), href: '#gameplay' },
+    // { name: t('nav.gameplay'), href: '#gameplay' },
     { name: t('nav.costumes'), href: '#costumes' },
     { name: t('nav.download'), href: '#download' },
   ]
