@@ -1,9 +1,39 @@
 import { motion } from 'framer-motion'
 import { Download as DownloadIcon, Apple, Monitor, Star, Users, Trophy } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { useEffect, useState } from 'react'
+import { getLatestVersion, formatFileSize, getPlatformDownloadUrl } from '../utils/version'
+
+interface PlatformDownload {
+  platform: 'mac' | 'windows' | 'linux'
+  downloadUrl: string
+  size: number
+  filename: string
+}
 
 const Download = () => {
   const { t } = useTranslation()
+  const [downloads, setDownloads] = useState<PlatformDownload[]>([])
+  const [currentVersion, setCurrentVersion] = useState<string>('')
+  const [loading, setLoading] = useState(true)
+  
+  useEffect(() => {
+    const fetchLatestVersion = async () => {
+      try {
+        const versionInfo = await getLatestVersion()
+        if (versionInfo) {
+          setDownloads(versionInfo.downloads)
+          setCurrentVersion(versionInfo.version)
+        }
+      } catch (error) {
+        console.error('Failed to fetch version info:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    
+    fetchLatestVersion()
+  }, [])
   
   const stats = [
     { icon: Users, number: '10K+', label: t('download.stats.users') },
@@ -16,26 +46,51 @@ const Download = () => {
       name: t('download.platforms.windows.name'),
       icon: Monitor,
       description: t('download.platforms.windows.description'),
-      downloadUrl: '#',
+      platform: 'windows' as const,
       available: true
     },
     {
       name: t('download.platforms.macos.name'),
       icon: Apple,
       description: t('download.platforms.macos.description'),
-      downloadUrl: '#',
+      platform: 'mac' as const,
       available: true
     },
     {
       name: t('download.platforms.linux.name'),
       icon: Monitor,
       description: t('download.platforms.linux.description'),
-      downloadUrl: '#',
+      platform: 'linux' as const,
       available: true
     }
   ]
 
   const features = t('download.features', { returnObjects: true }) as string[]
+
+  const handleDownload = (platform: 'mac' | 'windows' | 'linux') => {
+    const downloadUrl = getPlatformDownloadUrl(downloads, platform)
+    if (downloadUrl) {
+      // 创建隐藏的下载链接来避免页面跳动
+      const link = document.createElement('a')
+      link.href = downloadUrl
+      link.download = '' // 让浏览器决定文件名
+      link.style.display = 'none'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
+  }
+
+  const getPlatformInfo = (platform: 'mac' | 'windows' | 'linux') => {
+    const download = downloads.find(d => d.platform === platform)
+    return download ? {
+      available: true,
+      size: formatFileSize(download.size)
+    } : {
+      available: false,
+      size: ''
+    }
+  }
 
   return (
     <section id="download" className="section-padding relative overflow-hidden bg-gradient-to-br from-capy-50 via-lotus-50 to-pond-50">
@@ -139,55 +194,69 @@ const Download = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {platforms.map((platform, index) => (
-              <motion.div
-                key={platform.name}
-                className={`card-float p-8 ${
-                  platform.available 
-                    ? 'cursor-pointer hover:shadow-2xl' 
-                    : 'opacity-60'
-                }`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                whileHover={platform.available ? { y: -5, scale: 1.02 } : {}}
-              >
-                <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-4">
-                  <div className="flex items-center gap-4 sm:gap-6 flex-1 min-w-0">
-                    <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center ${
-                      platform.available 
-                        ? 'bg-gradient-to-r from-capy-500 to-lotus-500' 
-                        : 'bg-gray-400'
-                    }`}>
-                      <platform.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+            {platforms.map((platform, index) => {
+              const platformInfo = getPlatformInfo(platform.platform)
+              return (
+                <motion.div
+                  key={platform.name}
+                  className={`card-float p-8 ${
+                    platformInfo.available 
+                      ? 'cursor-pointer hover:shadow-2xl' 
+                      : 'opacity-60'
+                  }`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                  whileHover={platformInfo.available ? { y: -5, scale: 1.02 } : {}}
+                >
+                  <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-4">
+                    <div className="flex items-center gap-4 sm:gap-6 flex-1 min-w-0">
+                      <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center ${
+                        platformInfo.available 
+                          ? 'bg-gradient-to-r from-capy-500 to-lotus-500' 
+                          : 'bg-gray-400'
+                      }`}>
+                        <platform.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg sm:text-2xl font-bold text-gray-800 mb-1 sm:mb-2 flex items-center gap-3 font-display">
+                          {platform.name}
+                          <span className="text-sm font-normal bg-capy-100 text-capy-700 px-2 py-1 rounded-full min-w-[3rem] text-center">
+                            {currentVersion ? `v${currentVersion}` : 'v0.0.0'}
+                          </span>
+                        </h3>
+                        <p className="text-sm sm:text-base text-gray-600 font-body min-h-[1.25rem]">
+                          {platform.description}
+                          <span className="ml-2 text-xs text-gray-500 inline-block min-w-[3rem]">
+                            {platformInfo.size ? `(${platformInfo.size})` : '(--.--)'}
+                          </span>
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-lg sm:text-2xl font-bold text-gray-800 mb-1 sm:mb-2 flex items-center gap-3 font-display">
-                        {platform.name}
-                      </h3>
-                      <p className="text-sm sm:text-base text-gray-600 font-body">{platform.description}</p>
-                    </div>
+                    
+                    {platformInfo.available ? (
+                      <motion.button
+                        className="btn-primary px-3 py-2 sm:px-6 sm:py-3 text-sm sm:text-base whitespace-nowrap flex-shrink-0 disabled:opacity-50 min-w-[6rem] sm:min-w-[8rem]"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => handleDownload(platform.platform)}
+                        disabled={loading}
+                      >
+                        <DownloadIcon className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
+                        <span className="min-w-[3rem] text-center">
+                          {loading ? 'Loading' : t('download.download')}
+                        </span>
+                      </motion.button>
+                    ) : (
+                      <div className="px-3 py-2 sm:px-6 sm:py-3 bg-gray-200 text-gray-500 rounded-full font-semibold font-cute text-sm sm:text-base whitespace-nowrap flex-shrink-0 min-w-[6rem] sm:min-w-[8rem] text-center">
+                        {t('download.waiting')}
+                      </div>
+                    )}
                   </div>
-                  
-                  {platform.available ? (
-                    <motion.button
-                      className="btn-primary px-3 py-2 sm:px-6 sm:py-3 text-sm sm:text-base whitespace-nowrap flex-shrink-0"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => window.open(platform.downloadUrl, '_blank')}
-                    >
-                      <DownloadIcon className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
-                      {t('download.download')}
-                    </motion.button>
-                  ) : (
-                    <div className="px-3 py-2 sm:px-6 sm:py-3 bg-gray-200 text-gray-500 rounded-full font-semibold font-cute text-sm sm:text-base whitespace-nowrap flex-shrink-0">
-                      {t('download.waiting')}
-                    </div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              )
+            })}
           </motion.div>
         </div>
 
