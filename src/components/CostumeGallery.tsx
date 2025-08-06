@@ -1,12 +1,44 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IconSparkles, IconCrown, IconShirt, IconSword, IconMusic, IconFlower, IconWriting } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
 import { costumes } from '../data/costumes'
 
+// 装扮选择记录的类型定义
+interface CostumeSelection {
+  [category: string]: string // category -> costumeId
+}
+
 const CostumeGallery = () => {
   const { t, i18n } = useTranslation()
   const [selectedCategory, setSelectedCategory] = useState('headwear')
+  
+  // 从localStorage初始化装扮选择记录
+  const [selectedCostumes, setSelectedCostumes] = useState<CostumeSelection>(() => {
+    const saved = localStorage.getItem('selectedCostumes')
+    return saved ? JSON.parse(saved) : {}
+  })
+  
+  // 保存装扮选择到localStorage
+  useEffect(() => {
+    localStorage.setItem('selectedCostumes', JSON.stringify(selectedCostumes))
+  }, [selectedCostumes])
+  
+  // 页面加载时恢复之前的装扮选择
+  useEffect(() => {
+    if (window.GameEvent && Object.keys(selectedCostumes).length > 0) {
+      // 发送所有已保存的装扮选择到游戏引擎
+      const skinData: Record<string, string> = {}
+      Object.entries(selectedCostumes).forEach(([type, costumeId]) => {
+        skinData[type] = costumeId
+      })
+      
+      if (Object.keys(skinData).length > 0) {
+        window.GameEvent.emit('render-skin', skinData)
+        console.log('恢复装扮选择:', skinData)
+      }
+    }
+  }, []) // 只在组件挂载时执行一次
 
   const categories = [
     { id: 'headwear', name: t('costumes.categories.headwear'), icon: IconCrown },
@@ -120,20 +152,38 @@ const CostumeGallery = () => {
             {filteredCostumes.map((costume, index) => (
               <motion.div
                 key={costume.id}
-                className={`card-float p-2 sm:p-3 cursor-pointer group border-2 ${getRarityBorder(costume.rarity)}`}
+                className={`card-float p-2 sm:p-3 cursor-pointer group border-2 ${getRarityBorder(costume.rarity)} ${
+                  selectedCostumes[costume.id.split('-')[0]] === costume.id 
+                    ? 'ring-4 ring-lotus-500 ring-offset-2' 
+                    : ''
+                }`}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, delay: index * 0.02 }}
                 whileHover={{ y: -8, scale: 1.03 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {
-                  console.log('查看服装:', costume, costume.name[i18n.language as keyof typeof costume.name])
-
                   // 切换装扮
                   if (window.GameEvent) {
                     const ownId = costume.id;
                     const type = ownId.split('-')[0];
-                    window.GameEvent.emit('render-skin', { [type]: costume.id })
+                    
+                    // 更新内存中的装扮选择记录
+                    setSelectedCostumes(prev => ({
+                      ...prev,
+                      [type]: costume.id
+                    }));
+
+                    const data = { ...selectedCostumes, [type]: costume.id };
+                    
+                    // 发送事件到游戏引擎
+                    window.GameEvent.emit('render-skin', data)
+                    
+                    console.log('装扮选择已更新:', { 
+                      category: type, 
+                      costumeId: costume.id,
+                      allSelections: data
+                    })
                   }
                 }}
               >
@@ -141,6 +191,20 @@ const CostumeGallery = () => {
                 <div className={`absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r ${getRarityColor(costume.rarity)}`}>
                   {t(`costumes.rarity.${costume.rarity}`)}
                 </div>
+                
+                {/* 已选中标记 */}
+                {selectedCostumes[costume.id.split('-')[0]] === costume.id && (
+                  <motion.div
+                    className="absolute top-2 left-2 bg-lotus-500 text-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 15 }}
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </motion.div>
+                )}
 
                 {/* 服装图片 */}
                 <div className="aspect-square mb-2 sm:mb-3 rounded-xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 p-2">
@@ -181,6 +245,42 @@ const CostumeGallery = () => {
             ))}
           </motion.div>
         </AnimatePresence>
+
+        {/* 当前装扮总览 */}
+        {Object.keys(selectedCostumes).length > 0 && (
+          <motion.div
+            className="mt-12 p-6 glass-morphism rounded-3xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="text-xl font-bold text-gray-800 mb-4 font-cute text-center">
+              {t('costumes.currentSelection', '当前装扮组合')}
+            </h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {Object.entries(selectedCostumes).map(([type, costumeId]) => {
+                const costume = costumes.find(c => c.id === costumeId)
+                if (!costume) return null
+                
+                return (
+                  <motion.div
+                    key={type}
+                    className="flex items-center gap-2 px-4 py-2 bg-white/50 rounded-full"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <span className="text-sm text-gray-600 font-cute">
+                      {categories.find(c => c.id === costume.category)?.name}:
+                    </span>
+                    <span className="text-sm font-bold text-lotus-600 font-cute">
+                      {costume.name[i18n.language as keyof typeof costume.name]}
+                    </span>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </motion.div>
+        )}
 
         {/* 底部提示 */}
         <motion.div

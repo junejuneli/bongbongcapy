@@ -16,7 +16,7 @@ export interface Costume {
 }
 
 export const costumes: Costume[] = [
-  // 头饰类 (Head = 1) - 6个高品质装扮
+  // 头饰类 (Head = 1) - 6个有趣的装扮
   {
     id: '1-8',
     name: {
@@ -26,7 +26,7 @@ export const costumes: Costume[] = [
     },
     category: 'headwear',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz1/qf_hz1_8_tianshi.png',
+    image: '/capy_skins/preview/icon_hz1_8.png',
     description: {
       zh: '圣洁天使光环，神圣不可侵犯',
       en: 'Holy angel halo, sacred and inviolable',
@@ -34,7 +34,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '1-19',
+    id: '1-12',
     name: {
       zh: '财神',
       en: 'Richgod',
@@ -42,7 +42,7 @@ export const costumes: Costume[] = [
     },
     category: 'headwear',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz1/qf_hz1_12_caishenmao.png',
+    image: '/capy_skins/preview/icon_hz1_12.png',
     description: {
       zh: '财神降临，招财进宝',
       en: 'God of wealth descends, bringing fortune',
@@ -50,31 +50,31 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '1-4',
+    id: '1-14',
     name: {
-      zh: '王冠',
-      en: 'Crown',
-      ja: '王冠'
+      zh: '便便',
+      en: 'Poop',
+      ja: 'うんち'
     },
     category: 'headwear',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz1/qf_hz1_6_wangguan.png',
+    image: '/capy_skins/preview/icon_hz1_14.png',
     description: {
-      zh: '王者风范，至高荣誉',
-      en: 'Royal majesty, supreme honor',
-      ja: '王者の風格、至高の栄誉'
+      zh: '搞怪造型，幽默风趣',
+      en: 'Funny shape, humorous',
+      ja: 'おかしな形、ユーモラス'
     }
   },
   {
-    id: '1-14',
+    id: '1-9',
     name: {
       zh: '垃圾盖',
-      en: 'Tub Lid',
+      en: 'TubLid',
       ja: 'ゴミ蓋'
     },
     category: 'headwear',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz1/qf_hz1_9_lajigai.png',
+    image: '/capy_skins/preview/icon_hz1_9.png',
     description: {
       zh: '环保主题，创意十足',
       en: 'Environmental theme, creative',
@@ -84,33 +84,33 @@ export const costumes: Costume[] = [
   {
     id: '1-15',
     name: {
-      zh: '便便',
-      en: 'Poop',
-      ja: 'うんち'
+      zh: '冰激凌',
+      en: 'IceCream',
+      ja: 'アイスクリーム'
     },
     category: 'headwear',
-    rarity: 'epic',
-    image: '/capy_skins/qf_hz1/qf_hz1_14_baba.png',
+    rarity: 'rare',
+    image: '/capy_skins/preview/icon_hz1_15.png',
     description: {
-      zh: '搞怪造型，幽默风趣',
-      en: 'Funny shape, humorous',
-      ja: 'おかしな形、ユーモラス'
+      zh: '甜蜜冰激凌，夏日清凉',
+      en: 'Sweet ice cream, summer coolness',
+      ja: '甘いアイスクリーム、夏の涼しさ'
     }
   },
   {
-    id: '1-16',
+    id: '1-1',
     name: {
-      zh: '墨镜',
-      en: 'Shades',
-      ja: 'サングラス'
+      zh: '橘子',
+      en: 'Orange',
+      ja: 'オレンジ'
     },
     category: 'headwear',
-    rarity: 'epic',
-    image: '/capy_skins/qf_hz1/qf_hz1_13_mojing.png',
+    rarity: 'rare',
+    image: '/capy_skins/preview/icon_hz1_1.png',
     description: {
-      zh: '酷炫墨镜，时尚潮流',
-      en: 'Cool sunglasses, fashionable',
-      ja: 'クールなサングラス、ファッショナブル'
+      zh: '新鲜橘子，维C满满',
+      en: 'Fresh orange, full of vitamin C',
+      ja: '新鮮なオレンジ、ビタミンCたっぷり'
     }
   },
 
@@ -124,7 +124,7 @@ export const costumes: Costume[] = [
     },
     category: 'clothing',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz2/preview/icon_hz2_7.png',
+    image: '/capy_skins/preview/icon_hz2_7.png',
     description: {
       zh: '传统花棉袄，温暖如春',
       en: 'Traditional thermal coat, warm as spring',
@@ -132,15 +132,15 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '2-16',
+    id: '2-9',
     name: {
       zh: '财神服',
-      en: 'Rich God',
+      en: 'RichGod',
       ja: '財神服'
     },
     category: 'clothing',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz2/preview/icon_hz2_9.png',
+    image: '/capy_skins/preview/icon_hz2_9.png',
     description: {
       zh: '财神专属服装，金光闪闪',
       en: 'Exclusive god of wealth outfit, golden',
@@ -156,7 +156,7 @@ export const costumes: Costume[] = [
     },
     category: 'clothing',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz2/preview/icon_hz2_6.png',
+    image: '/capy_skins/preview/icon_hz2_6.png',
     description: {
       zh: '神秘木乃伊，古埃及风情',
       en: 'Mysterious mummy, ancient Egyptian style',
@@ -164,7 +164,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '2-15',
+    id: '2-8',
     name: {
       zh: '垃圾桶',
       en: 'Bin',
@@ -172,7 +172,7 @@ export const costumes: Costume[] = [
     },
     category: 'clothing',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz2/preview/icon_hz2_8.png',
+    image: '/capy_skins/preview/icon_hz2_8.png',
     description: {
       zh: '环保垃圾桶，绿色生活',
       en: 'Eco-friendly bin, green living',
@@ -188,7 +188,7 @@ export const costumes: Costume[] = [
     },
     category: 'clothing',
     rarity: 'rare',
-    image: '/capy_skins/qf_hz2/preview/icon_hz2_1.png',
+    image: '/capy_skins/preview/icon_hz2_1.png',
     description: {
       zh: '简约短袖，清爽舒适',
       en: 'Simple T-shirt, fresh and comfortable',
@@ -196,15 +196,15 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '2-2',
+    id: '2-3',
     name: {
       zh: '草裙',
-      en: 'Hula Skirt',
+      en: 'HulaSkirt',
       ja: 'フラスカート'
     },
     category: 'clothing',
     rarity: 'rare',
-    image: '/capy_skins/qf_hz2/preview/icon_hz2_3.png',
+    image: '/capy_skins/preview/icon_hz2_3.png',
     description: {
       zh: '热带草裙，度假风情',
       en: 'Tropical hula skirt, vacation vibes',
@@ -214,7 +214,7 @@ export const costumes: Costume[] = [
 
   // 手持类 (Shouchi = 3) - 6个高品质装扮
   {
-    id: '3-10',
+    id: '3-9',
     name: {
       zh: '灯笼',
       en: 'Lantern',
@@ -222,7 +222,7 @@ export const costumes: Costume[] = [
     },
     category: 'handheld',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz3/qf_hz3_9_dengl.png',
+    image: '/capy_skins/preview/icon_hz3_9.png',
     description: {
       zh: '传统红灯笼，禧年吉祥',
       en: 'Traditional red lantern, festive and auspicious',
@@ -230,7 +230,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '3-13',
+    id: '3-11',
     name: {
       zh: '骨头',
       en: 'Bone',
@@ -238,7 +238,7 @@ export const costumes: Costume[] = [
     },
     category: 'handheld',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz3/qf_hz3_11_gutou.png',
+    image: '/capy_skins/preview/icon_hz3_11.png',
     description: {
       zh: '原始骨头，野性力量',
       en: 'Primitive bone, wild power',
@@ -246,7 +246,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '3-5',
+    id: '3-4',
     name: {
       zh: '平底锅',
       en: 'Pan',
@@ -254,7 +254,7 @@ export const costumes: Costume[] = [
     },
     category: 'handheld',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz3/qf_hz3_4_guo.png',
+    image: '/capy_skins/preview/icon_hz3_4.png',
     description: {
       zh: '厨房神器，美食制作',
       en: 'Kitchen artifact, food making',
@@ -262,7 +262,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '3-7',
+    id: '3-6',
     name: {
       zh: '大葱',
       en: 'Scallion',
@@ -270,7 +270,7 @@ export const costumes: Costume[] = [
     },
     category: 'handheld',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz3/qf_hz3_6_dacong.png',
+    image: '/capy_skins/preview/icon_hz3_6.png',
     description: {
       zh: '新鲜大葱，健康生活',
       en: 'Fresh scallion, healthy life',
@@ -278,7 +278,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '3-11',
+    id: '3-8',
     name: {
       zh: '棒棒糖',
       en: 'Pop',
@@ -286,7 +286,7 @@ export const costumes: Costume[] = [
     },
     category: 'handheld',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz3/qf_hz3_8_tangg.png',
+    image: '/capy_skins/preview/icon_hz3_8.png',
     description: {
       zh: '甜蜜棒棒糖，童年回忆',
       en: 'Sweet lollipop, childhood memories',
@@ -294,15 +294,15 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '3-14',
+    id: '3-10',
     name: {
       zh: '咸鱼',
-      en: 'Salt Fish',
+      en: 'SaltFish',
       ja: '塩魚'
     },
     category: 'handheld',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz3/qf_hz3_10_xianyu.png',
+    image: '/capy_skins/preview/icon_hz3_10.png',
     description: {
       zh: '咸鱼翻身，逆袭人生',
       en: 'Salted fish turns over, life comeback',
@@ -312,7 +312,7 @@ export const costumes: Costume[] = [
 
   // 木鱼类 (Muyu = 4) - 6个高品质装扮
   {
-    id: '4-7',
+    id: '4-3',
     name: {
       zh: '小屁屁',
       en: 'Lit-Butt',
@@ -320,7 +320,7 @@ export const costumes: Costume[] = [
     },
     category: 'woodblock',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz4/qf_hz4_3_kejipi.png',
+    image: '/capy_skins/preview/icon_hz4_3.png',
     description: {
       zh: '可爱小屁屁，萌化人心',
       en: 'Cute little butt, melting hearts',
@@ -336,7 +336,7 @@ export const costumes: Costume[] = [
     },
     category: 'woodblock',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz4/qf_hz4_9_majiang.png',
+    image: '/capy_skins/preview/icon_hz4_9.png',
     description: {
       zh: '传统麻将，智慧博弈',
       en: 'Traditional mahjong, wisdom game',
@@ -344,15 +344,15 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '4-4',
+    id: '4-12',
     name: {
       zh: '元宝',
-      en: 'Yuan Bao',
+      en: 'YuanBao',
       ja: '元宝'
     },
     category: 'woodblock',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz4/qf_hz4_12_yuanbao.png',
+    image: '/capy_skins/preview/icon_hz4_12.png',
     description: {
       zh: '古代元宝，财富象征',
       en: 'Ancient yuan bao, symbol of wealth',
@@ -368,7 +368,7 @@ export const costumes: Costume[] = [
     },
     category: 'woodblock',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz4/qf_hz4_8_dianshi.png',
+    image: '/capy_skins/preview/icon_hz4_8.png',
     description: {
       zh: '复古电视，怀旧情怀',
       en: 'Retro TV, nostalgic feelings',
@@ -384,7 +384,7 @@ export const costumes: Costume[] = [
     },
     category: 'woodblock',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz4/qf_hz4_10_cunqg.png',
+    image: '/capy_skins/preview/icon_hz4_10.png',
     description: {
       zh: '可爱存钱罐，理财好习惯',
       en: 'Cute piggy bank, good financial habits',
@@ -400,7 +400,7 @@ export const costumes: Costume[] = [
     },
     category: 'woodblock',
     rarity: 'rare',
-    image: '/capy_skins/qf_hz4/qf_hz4_1_my.png',
+    image: '/capy_skins/preview/icon_hz4_1.png',
     description: {
       zh: '传统木鱼，禅意悠远',
       en: 'Traditional woodblock, zen and distant',
@@ -410,15 +410,15 @@ export const costumes: Costume[] = [
 
   // 敲击文字类 (Text = 5) - 6个高品质装扮
   {
-    id: '5-3',
+    id: '5-5',
     name: {
-      zh: '哈哈哈',
-      en: 'Haha',
-      ja: '哈哈'
+      zh: '生气',
+      en: 'Angry',
+      ja: '怒る'
     },
     category: 'text',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz5/qf_hz5_q_7_haha.png',
+    image: '/capy_skins/preview/icon_hz5_5.png',
     description: {
       zh: '开心大笑，欢乐无限',
       en: 'Laughing happily, endless joy',
@@ -426,7 +426,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '5-8',
+    id: '5-12',
     name: {
       zh: '發',
       en: 'Fa',
@@ -434,7 +434,7 @@ export const costumes: Costume[] = [
     },
     category: 'text',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz5/qf_hz5_q_12_facai.png',
+    image: '/capy_skins/preview/icon_hz5_12.png',
     description: {
       zh: '发财致富，好运连连',
       en: 'Get rich, good luck',
@@ -442,7 +442,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '5-5',
+    id: '5-6',
     name: {
       zh: '订单',
       en: 'Order',
@@ -450,7 +450,7 @@ export const costumes: Costume[] = [
     },
     category: 'text',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz5/qf_hz5_q_6_dingdan.png',
+    image: '/capy_skins/preview/icon_hz5_6.png',
     description: {
       zh: '商业订单，生意兴隆',
       en: 'Business order, prosperous business',
@@ -458,7 +458,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '5-9',
+    id: '5-11',
     name: {
       zh: '金币',
       en: 'Coin',
@@ -466,7 +466,7 @@ export const costumes: Costume[] = [
     },
     category: 'text',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz5/qf_hz5_q_11_jinbi.png',
+    image: '/capy_skins/preview/icon_hz5_11.png',
     description: {
       zh: '闪亮金币，财富积累',
       en: 'Shiny gold coin, wealth accumulation',
@@ -482,7 +482,7 @@ export const costumes: Costume[] = [
     },
     category: 'text',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz5/qf_hz5_q_10_zhonzhi.png',
+    image: '/capy_skins/preview/icon_hz5_10.png',
     description: {
       zh: '指点江山，掌控全局',
       en: 'Point to the world, control the overall situation',
@@ -490,7 +490,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '5-11',
+    id: '5-9',
     name: {
       zh: '眼睛',
       en: 'Eye',
@@ -498,7 +498,7 @@ export const costumes: Costume[] = [
     },
     category: 'text',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz5/qf_hz5_q_9_dayan.png',
+    image: '/capy_skins/preview/icon_hz5_9.png',
     description: {
       zh: '明亮眼睛，洞察一切',
       en: 'Bright eyes, see through everything',
@@ -508,15 +508,15 @@ export const costumes: Costume[] = [
 
   // 莲花底座类 (Lotus = 6) - 6个高品质装扮
   {
-    id: '6-6',
+    id: '6-9',
     name: {
       zh: '鸭子泳圈',
-      en: 'Swim Ring',
+      en: 'SwimRing',
       ja: 'アヒル浮き輪'
     },
     category: 'lotus',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz6/qf_hz6_q_6_hh.png',
+    image: '/capy_skins/preview/icon_hz6_9.png',
     description: {
       zh: '可爱鸭子泳圈，夏日清凉',
       en: 'Cute duck swim ring, summer coolness',
@@ -524,15 +524,15 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '6-9',
+    id: '6-5',
     name: {
       zh: '筋斗云',
-      en: 'Xiang Yun',
+      en: 'XiangYun',
       ja: '筋斗雲'
     },
     category: 'lotus',
     rarity: 'legendary',
-    image: '/capy_skins/qf_hz6/qf_hz6_q_5_jindouy.png',
+    image: '/capy_skins/preview/icon_hz6_5.png',
     description: {
       zh: '神话筋斗云，腾云驾雾',
       en: 'Mythical somersault cloud, soaring through clouds',
@@ -540,7 +540,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '6-4',
+    id: '6-7',
     name: {
       zh: '奥利奥',
       en: 'Oreo',
@@ -548,7 +548,7 @@ export const costumes: Costume[] = [
     },
     category: 'lotus',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz6/qf_hz6_h_7_aoliao.png',
+    image: '/capy_skins/preview/icon_hz6_7.png',
     description: {
       zh: '经典奥利奥，甜蜜享受',
       en: 'Classic Oreo, sweet enjoyment',
@@ -556,7 +556,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '6-7',
+    id: '6-10',
     name: {
       zh: '月饼',
       en: 'Mooncake',
@@ -564,7 +564,7 @@ export const costumes: Costume[] = [
     },
     category: 'lotus',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz6/qf_hz6_h_10_yuebing.png',
+    image: '/capy_skins/preview/icon_hz6_10.png',
     description: {
       zh: '传统月饼，中秋团圆',
       en: 'Traditional mooncake, Mid-Autumn reunion',
@@ -572,7 +572,7 @@ export const costumes: Costume[] = [
     }
   },
   {
-    id: '6-10',
+    id: '6-6',
     name: {
       zh: '莲花',
       en: 'Lotus',
@@ -580,7 +580,7 @@ export const costumes: Costume[] = [
     },
     category: 'lotus',
     rarity: 'epic',
-    image: '/capy_skins/qf_hz6/qf_hz6_q_3_zhixiang.png',
+    image: '/capy_skins/preview/icon_hz6_6.png',
     description: {
       zh: '圣洁莲花，出淤泥而不染',
       en: 'Sacred lotus, pure from mud',
@@ -596,7 +596,7 @@ export const costumes: Costume[] = [
     },
     category: 'lotus',
     rarity: 'rare',
-    image: '/capy_skins/qf_hz6/qf_hz6_h_1_pt.png',
+    image: '/capy_skins/preview/icon_hz6_1.png',
     description: {
       zh: '禅修蒲团，静心养性',
       en: 'Meditation futon, calm mind',
