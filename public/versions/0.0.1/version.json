@@ -1,12 +1,12 @@
 {
   "version": "0.0.1",
   "productName": "敲敲敲好运",
-  "buildTime": "2025-07-31T04:31:48.080Z",
+  "buildTime": "2025-08-05T16:51:17.090Z",
   "artifacts": [
     {
       "original": "敲敲敲好运_0.0.1_aarch64.dmg",
       "normalized": "敲敲敲好运-0.0.1-mac-universal.dmg",
-      "size": 17171792,
+      "size": 18498808,
       "platform": "mac"
     },
     {

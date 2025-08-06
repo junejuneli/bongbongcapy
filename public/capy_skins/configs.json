@@ -11,18 +11,27 @@
     },
     {
       "id": 2,
-      "name": "厨师帽",
-      "ename": "Chef",
-      "part1": 4,
+      "name": "僧帽",
+      "ename": "Monk",
+      "part1": 21,
       "quality": "R",
       "buyFragment": 10,
       "sellFragment": 5
     },
     {
       "id": 3,
-      "name": "假发",
-      "ename": "Wig",
-      "part1": 5,
+      "name": "官帽",
+      "ename": "Qing",
+      "part1": 22,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
+    },
+    {
+      "id": 4,
+      "name": "厨师帽",
+      "ename": "Chef",
+      "part1": 4,
       "quality": "R",
       "buyFragment": 10,
       "sellFragment": 5
@@ -38,51 +47,6 @@
     },
     {
       "id": 6,
-      "name": "僧帽",
-      "ename": "Monk",
-      "part1": 21,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
-    },
-    {
-      "id": 7,
-      "name": "官帽",
-      "ename": "Qing",
-      "part1": 22,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
-    },
-    {
-      "id": 17,
-      "name": "冰激凌",
-      "ename": "IceCream",
-      "part1": 11,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
-    },
-    {
-      "id": 18,
-      "name": "礼帽",
-      "ename": "TopHat",
-      "part1": 12,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
-    },
-    {
-      "id": 20,
-      "name": "星星",
-      "ename": "Star",
-      "part1": 13,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
-    },
-    {
-      "id": 4,
       "name": "王冠",
       "ename": "Cown",
       "part1": 14,
@@ -91,31 +55,13 @@
       "sellFragment": 10
     },
     {
-      "id": 14,
-      "name": "垃圾盖",
-      "ename": "TubLid",
-      "part1": 18,
-      "quality": "SR",
-      "buyFragment": 20,
-      "sellFragment": 10
-    },
-    {
-      "id": 15,
-      "name": "便便",
-      "ename": "Poop",
-      "part1": 9,
-      "quality": "SR",
-      "buyFragment": 20,
-      "sellFragment": 10
-    },
-    {
-      "id": 16,
-      "name": "墨镜",
-      "ename": "Shades",
-      "part1": 10,
-      "quality": "SR",
-      "buyFragment": 20,
-      "sellFragment": 10
+      "id": 7,
+      "name": "假发",
+      "ename": "Wig",
+      "part1": 5,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
     },
     {
       "id": 8,
@@ -127,13 +73,67 @@
       "sellFragment": 25
     },
     {
-      "id": 19,
+      "id": 9,
+      "name": "垃圾盖",
+      "ename": "TubLid",
+      "part1": 18,
+      "quality": "SR",
+      "buyFragment": 20,
+      "sellFragment": 10
+    },
+    {
+      "id": 10,
+      "name": "礼帽",
+      "ename": "TopHat",
+      "part1": 12,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
+    },
+    {
+      "id": 11,
+      "name": "星星",
+      "ename": "Star",
+      "part1": 13,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
+    },
+    {
+      "id": 12,
       "name": "财神",
       "ename": "Richgod",
       "part1": 16,
       "quality": "SSR",
       "buyFragment": 50,
       "sellFragment": 25
+    },
+    {
+      "id": 13,
+      "name": "墨镜",
+      "ename": "Shades",
+      "part1": 10,
+      "quality": "SR",
+      "buyFragment": 20,
+      "sellFragment": 10
+    },
+    {
+      "id": 14,
+      "name": "便便",
+      "ename": "Poop",
+      "part1": 9,
+      "quality": "SR",
+      "buyFragment": 20,
+      "sellFragment": 10
+    },
+    {
+      "id": 15,
+      "name": "冰激凌",
+      "ename": "IceCream",
+      "part1": 11,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
     }
   ],
   "2": [
@@ -150,22 +150,22 @@
     },
     {
       "id": 2,
-      "name": "草裙",
-      "ename": "HulaSkirt",
-      "part1": 99,
+      "name": "袈裟",
+      "ename": "Kasaya",
+      "part1": 103,
       "part2": 157,
-      "part3": 158,
+      "part3": 105,
       "quality": "R",
       "buyFragment": 10,
       "sellFragment": 5
     },
     {
       "id": 3,
-      "name": "袈裟",
-      "ename": "Kasaya",
-      "part1": 103,
+      "name": "草裙",
+      "ename": "HulaSkirt",
+      "part1": 99,
       "part2": 157,
-      "part3": 105,
+      "part3": 158,
       "quality": "R",
       "buyFragment": 10,
       "sellFragment": 5
@@ -204,17 +204,6 @@
       "sellFragment": 10
     },
     {
-      "id": 15,
-      "name": "垃圾桶",
-      "ename": "Bin",
-      "part1": 102,
-      "part2": 157,
-      "part3": 161,
-      "quality": "SR",
-      "buyFragment": 20,
-      "sellFragment": 10
-    },
-    {
       "id": 7,
       "name": "花棉袄",
       "ename": "Thermal",
@@ -226,7 +215,18 @@
       "sellFragment": 25
     },
     {
-      "id": 16,
+      "id": 8,
+      "name": "垃圾桶",
+      "ename": "Bin",
+      "part1": 102,
+      "part2": 157,
+      "part3": 161,
+      "quality": "SR",
+      "buyFragment": 20,
+      "sellFragment": 10
+    },
+    {
+      "id": 9,
       "name": "财神服",
       "ename": "RichGod",
       "part1": 116,
@@ -240,9 +240,9 @@
   "3": [
     {
       "id": 1,
-      "name": "狼牙棒",
-      "ename": "Mace",
-      "part1": 31,
+      "name": "胡萝卜",
+      "ename": "Carrot",
+      "part1": 40,
       "quality": "R",
       "buyFragment": 10,
       "sellFragment": 5
@@ -258,6 +258,42 @@
     },
     {
       "id": 3,
+      "name": "竹筒",
+      "ename": "Pillar",
+      "part1": 44,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
+    },
+    {
+      "id": 4,
+      "name": "平底锅",
+      "ename": "Pan",
+      "part1": 41,
+      "quality": "SR",
+      "buyFragment": 20,
+      "sellFragment": 10
+    },
+    {
+      "id": 5,
+      "name": "狼牙棒",
+      "ename": "Mace",
+      "part1": 31,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
+    },
+    {
+      "id": 6,
+      "name": "大葱",
+      "ename": "Scallion",
+      "part1": 52,
+      "quality": "SR",
+      "buyFragment": 20,
+      "sellFragment": 10
+    },
+    {
+      "id": 7,
       "name": "雨伞",
       "ename": "Umbrella",
       "part1": 35,
@@ -266,22 +302,40 @@
       "sellFragment": 5
     },
     {
-      "id": 4,
-      "name": "胡萝卜",
-      "ename": "Carrot",
-      "part1": 40,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
+      "id": 8,
+      "name": "棒棒糖",
+      "ename": "Pop",
+      "part1": 43,
+      "quality": "SR",
+      "buyFragment": 20,
+      "sellFragment": 10
     },
     {
-      "id": 6,
-      "name": "竹筒",
-      "ename": "Pillar",
-      "part1": 44,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
+      "id": 9,
+      "name": "灯笼",
+      "ename": "Lantern",
+      "part1": 38,
+      "quality": "SSR",
+      "buyFragment": 50,
+      "sellFragment": 25
+    },
+    {
+      "id": 10,
+      "name": "咸鱼",
+      "ename": "SaltFish",
+      "part1": 47,
+      "quality": "SR",
+      "buyFragment": 20,
+      "sellFragment": 10
+    },
+    {
+      "id": 11,
+      "name": "骨头",
+      "ename": "Bone",
+      "part1": 51,
+      "quality": "SSR",
+      "buyFragment": 50,
+      "sellFragment": 25
     },
     {
       "id": 12,
@@ -291,60 +345,6 @@
       "quality": "R",
       "buyFragment": 10,
       "sellFragment": 5
-    },
-    {
-      "id": 5,
-      "name": "平底锅",
-      "ename": "Pan",
-      "part1": 41,
-      "quality": "SR",
-      "buyFragment": 20,
-      "sellFragment": 10
-    },
-    {
-      "id": 7,
-      "name": "大葱",
-      "ename": "Scallion",
-      "part1": 52,
-      "quality": "SR",
-      "buyFragment": 20,
-      "sellFragment": 10
-    },
-    {
-      "id": 11,
-      "name": "棒棒糖",
-      "ename": "Pop",
-      "part1": 43,
-      "quality": "SR",
-      "buyFragment": 20,
-      "sellFragment": 10
-    },
-    {
-      "id": 14,
-      "name": "咸鱼",
-      "ename": "SaltFish",
-      "part1": 47,
-      "quality": "SR",
-      "buyFragment": 20,
-      "sellFragment": 10
-    },
-    {
-      "id": 10,
-      "name": "灯笼",
-      "ename": "Lantern",
-      "part1": 38,
-      "quality": "SSR",
-      "buyFragment": 50,
-      "sellFragment": 25
-    },
-    {
-      "id": 13,
-      "name": "骨头",
-      "ename": "Bone",
-      "part1": 51,
-      "quality": "SSR",
-      "buyFragment": 50,
-      "sellFragment": 25
     }
   ],
   "4": [
@@ -368,24 +368,15 @@
     },
     {
       "id": 3,
-      "name": "地鼠",
-      "ename": "Gopher",
-      "part1": 77,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
+      "name": "小屁屁",
+      "ename": "Lit-Butt",
+      "part1": 95,
+      "quality": "SSR",
+      "buyFragment": 50,
+      "sellFragment": 25
     },
     {
-      "id": 5,
-      "name": "大鼓",
-      "ename": "Drum",
-      "part1": 89,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
-    },
-    {
-      "id": 6,
+      "id": 4,
       "name": "易拉罐",
       "ename": "Can",
       "part1": 93,
@@ -394,16 +385,7 @@
       "sellFragment": 5
     },
     {
-      "id": 12,
-      "name": "轮胎",
-      "ename": "Tire",
-      "part1": 72,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
-    },
-    {
-      "id": 13,
+      "id": 5,
       "name": "汉堡",
       "ename": "Hamburg",
       "part1": 70,
@@ -412,13 +394,22 @@
       "sellFragment": 5
     },
     {
-      "id": 4,
-      "name": "元宝",
-      "ename": "YuanBao",
-      "part1": 88,
-      "quality": "SR",
-      "buyFragment": 20,
-      "sellFragment": 10
+      "id": 6,
+      "name": "地鼠",
+      "ename": "Gopher",
+      "part1": 77,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
+    },
+    {
+      "id": 7,
+      "name": "大鼓",
+      "ename": "Drum",
+      "part1": 89,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
     },
     {
       "id": 8,
@@ -430,6 +421,15 @@
       "sellFragment": 10
     },
     {
+      "id": 9,
+      "name": "麻将",
+      "ename": "Mahjong",
+      "part1": 76,
+      "quality": "SSR",
+      "buyFragment": 50,
+      "sellFragment": 25
+    },
+    {
       "id": 10,
       "name": "存钱罐",
       "ename": "Piggy",
@@ -439,22 +439,22 @@
       "sellFragment": 10
     },
     {
-      "id": 7,
-      "name": "小屁屁",
-      "ename": "Lit-Butt",
-      "part1": 95,
-      "quality": "SSR",
-      "buyFragment": 50,
-      "sellFragment": 25
+      "id": 11,
+      "name": "轮胎",
+      "ename": "Tire",
+      "part1": 72,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
     },
     {
-      "id": 9,
-      "name": "麻将",
-      "ename": "Mahjong",
-      "part1": 76,
-      "quality": "SSR",
-      "buyFragment": 50,
-      "sellFragment": 25
+      "id": 12,
+      "name": "元宝",
+      "ename": "YuanBao",
+      "part1": 88,
+      "quality": "SR",
+      "buyFragment": 20,
+      "sellFragment": 10
     }
   ],
   "5": [
@@ -478,15 +478,6 @@
     },
     {
       "id": 3,
-      "name": "HAHA",
-      "ename": "HAHA",
-      "part1": 132,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
-    },
-    {
-      "id": 4,
       "name": "Boom~",
       "ename": "Boom~",
       "part1": 137,
@@ -495,16 +486,7 @@
       "sellFragment": 5
     },
     {
-      "id": 6,
-      "name": "闪光",
-      "ename": "Flash",
-      "part1": 146,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
-    },
-    {
-      "id": 12,
+      "id": 4,
       "name": "Lucky",
       "ename": "Lucky",
       "part1": 129,
@@ -514,6 +496,15 @@
     },
     {
       "id": 5,
+      "name": "生气",
+      "ename": "Angry",
+      "part1": 149,
+      "quality": "SSR",
+      "buyFragment": 50,
+      "sellFragment": 25
+    },
+    {
+      "id": 6,
       "name": "订单",
       "ename": "Order",
       "part1": 144,
@@ -522,10 +513,28 @@
       "sellFragment": 10
     },
     {
+      "id": 7,
+      "name": "HAHA",
+      "ename": "HAHA",
+      "part1": 132,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
+    },
+    {
+      "id": 8,
+      "name": "闪光",
+      "ename": "Flash",
+      "part1": 146,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
+    },
+    {
       "id": 9,
-      "name": "金币",
-      "ename": "Coin",
-      "part1": 142,
+      "name": "眼睛",
+      "ename": "Eye",
+      "part1": 148,
       "quality": "SR",
       "buyFragment": 20,
       "sellFragment": 10
@@ -541,24 +550,15 @@
     },
     {
       "id": 11,
-      "name": "眼睛",
-      "ename": "Eye",
-      "part1": 148,
+      "name": "金币",
+      "ename": "Coin",
+      "part1": 142,
       "quality": "SR",
       "buyFragment": 20,
       "sellFragment": 10
     },
     {
-      "id": 7,
-      "name": "生气",
-      "ename": "Angry",
-      "part1": 149,
-      "quality": "SSR",
-      "buyFragment": 50,
-      "sellFragment": 25
-    },
-    {
-      "id": 8,
+      "id": 12,
       "name": "發",
       "ename": "Fa",
       "part1": 139,
@@ -573,6 +573,7 @@
       "name": "蒲团",
       "ename": "Futon",
       "part1": 153,
+      "part2": 173,
       "quality": "R",
       "buyFragment": 10,
       "sellFragment": 5
@@ -582,81 +583,90 @@
       "name": "草窝",
       "ename": "Thatch",
       "part1": 154,
+      "part2": 173,
       "quality": "R",
       "buyFragment": 10,
       "sellFragment": 5
     },
     {
       "id": 3,
-      "name": "榴莲",
-      "ename": "Durian",
-      "part1": 155,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
-    },
-    {
-      "id": 5,
-      "name": "百年树桩",
-      "ename": "TreeStump",
-      "part1": 160,
-      "quality": "R",
-      "buyFragment": 10,
-      "sellFragment": 5
-    },
-    {
-      "id": 8,
       "name": "纸箱",
       "ename": "Box",
-      "part1": 167,
+      "part1": 172,
+      "part2": 167,
       "quality": "R",
       "buyFragment": 10,
       "sellFragment": 5
     },
     {
       "id": 4,
-      "name": "奥利奥",
-      "ename": "Oreo",
-      "part1": 159,
+      "name": "榴莲",
+      "ename": "Durian",
+      "part1": 155,
+      "part2": 173,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
+    },
+    {
+      "id": 5,
+      "name": "筋斗云",
+      "ename": "XiangYun",
+      "part1": 172,
+      "part2": 168,
+      "quality": "SSR",
+      "buyFragment": 50,
+      "sellFragment": 25
+    },
+    {
+      "id": 6,
+      "name": "莲花",
+      "ename": "Lotus",
+      "part1": 172,
+      "part2": 169,
       "quality": "SR",
       "buyFragment": 20,
       "sellFragment": 10
     },
     {
       "id": 7,
-      "name": "月饼",
-      "ename": "Mooncake",
-      "part1": 165,
+      "name": "奥利奥",
+      "ename": "Oreo",
+      "part1": 159,
+      "part2": 173,
       "quality": "SR",
       "buyFragment": 20,
       "sellFragment": 10
     },
     {
-      "id": 10,
-      "name": "莲花",
-      "ename": "Lotus",
-      "part1": 169,
-      "quality": "SR",
-      "buyFragment": 20,
-      "sellFragment": 10
-    },
-    {
-      "id": 6,
-      "name": "鸭子泳圈",
-      "ename": "SwimRing",
-      "part1": 164,
-      "quality": "SSR",
-      "buyFragment": 50,
-      "sellFragment": 25
+      "id": 8,
+      "name": "百年树桩",
+      "ename": "TreeStump",
+      "part1": 160,
+      "part2": 173,
+      "quality": "R",
+      "buyFragment": 10,
+      "sellFragment": 5
     },
     {
       "id": 9,
-      "name": "筋斗云",
-      "ename": "XiangYun",
-      "part1": 168,
+      "name": "鸭子泳圈",
+      "ename": "SwimRing",
+      "part1": 164,
+      "part2": 173,
       "quality": "SSR",
       "buyFragment": 50,
       "sellFragment": 25
+    },
+    {
+      "id": 10,
+      "name": "月饼",
+      "ename": "Mooncake",
+      "part1": 165,
+      "part2": 173,
+      "quality": "SR",
+      "buyFragment": 20,
+      "sellFragment": 10
     }
   ],
   "base": [
@@ -1436,8 +1446,8 @@
     {
       "id": 152,
       "petName": "capy",
-      "slotName": "qf_hz5_h",
-      "attachment": "qf_hz5_h_1_taiy",
+      "slotName": "qf_hz5_gd",
+      "attachment": "qf_hz5_q_1_gd",
       "fileName": "empty"
     },
     {
@@ -1514,22 +1524,36 @@
       "id": 167,
       "petName": "capy",
       "slotName": "qf_hz6_q",
-      "attachment": "qf_hz6_h_1_pt",
+      "attachment": "qf_hz6_q_6_hh",
       "fileName": "qf_hz6_q_3_zhixiang"
     },
     {
       "id": 168,
       "petName": "capy",
       "slotName": "qf_hz6_q",
-      "attachment": "qf_hz6_h_1_pt",
+      "attachment": "qf_hz6_q_6_hh",
       "fileName": "qf_hz6_q_5_jindouy"
     },
     {
       "id": 169,
       "petName": "capy",
       "slotName": "qf_hz6_q",
-      "attachment": "qf_hz6_h_1_pt",
+      "attachment": "qf_hz6_q_6_hh",
       "fileName": "qf_hz6_q_6_hh"
+    },
+    {
+      "id": 172,
+      "petName": "capy",
+      "slotName": "qf_hz6_h",
+      "attachment": "qf_hz6_h_1_pt",
+      "fileName": "empty"
+    },
+    {
+      "id": 173,
+      "petName": "capy",
+      "slotName": "qf_hz6_q",
+      "attachment": "qf_hz6_q_6_hh",
+      "fileName": "empty"
     }
   ]
 }
