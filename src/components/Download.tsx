@@ -21,8 +21,6 @@ const Download = () => {
     const fetchLatestVersion = async () => {
       try {
         const versionInfo = await getLatestVersion()
-        console.log('versionInfo', versionInfo);
-        
         if (versionInfo) {
           setDownloads(versionInfo.downloads)
           setCurrentVersion(versionInfo.version)
@@ -84,7 +82,8 @@ const Download = () => {
   }
 
   const getPlatformInfo = (platform: 'mac' | 'windows' | 'linux') => {
-    const download = downloads?.find(d => d.platform === platform)
+    
+    const download = downloads?.find(d => d.platform === platform);
     return download ? {
       available: true,
       size: formatFileSize(download.size)
@@ -198,6 +197,8 @@ const Download = () => {
           >
             {platforms.map((platform, index) => {
               const platformInfo = getPlatformInfo(platform.platform)
+
+              console.log('platformInfo', platformInfo);
               return (
                 <motion.div
                   key={platform.name}

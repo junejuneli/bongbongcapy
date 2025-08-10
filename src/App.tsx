@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import Features from './components/Features'
+import PetSkinShowcase from './components/PetSkinShowcase'
 import CostumeGallery from './components/CostumeGallery'
 import Download from './components/Download'
 import Footer from './components/Footer'
@@ -55,6 +56,7 @@ function App() {
       <main>
         <Hero />
         <Features />
+        <PetSkinShowcase />
         <CostumeGallery />
         <Download />
       </main>

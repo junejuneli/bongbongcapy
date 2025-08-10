@@ -216,5 +216,34 @@
     "users": "Users Love",
     "rating": "Rating", 
     "awards": "Awards Won"
+  },
+  "petSkins": {
+    "title": "Capybara Fashion Show",
+    "subtitle": "Unlock various cute outfits to create your unique capybara companion",
+    "viewDetail": "View Details",
+    "close": "Close",
+    "skin1": "Fortune Capy",
+    "skin2": "Zen Master",
+    "skin3": "Summer Slacker King",
+    "skin4": "Foodie Capybara",
+    "skin5": "Unboxing Champion",
+    "skin6": "New Year Rich Capy",
+    "skin7": "Eco Worker Capy",
+    "desc1": "Holding gold ingots, Money+1, boss wants to give you a raise",
+    "desc2": "Merit+1, lotus meditation, boss too embarrassed to ask overtime",
+    "desc3": "Sunglasses burger with floatie, work like vacation, MVP of slacking",
+    "desc4": "Orange hat with green onion, corgi butt cushion, too cute to scold",
+    "desc5": "Haha! Got TV and chocolate poop, I'm the luckiest capy",
+    "desc6": "Drums and red packets coming, ring in the first gold of new year",
+    "desc7": "Wearing green hat driving garbage truck, working capy's dignity",
+    "category": {
+      "festival": "Festival",
+      "zen": "Zen",
+      "vacation": "Vacation",
+      "foodie": "Foodie",
+      "gamer": "Gamer",
+      "newyear": "New Year",
+      "eco": "Eco"
+    }
   }
 }
