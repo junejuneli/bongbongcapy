@@ -4,103 +4,77 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-### Essential Commands
-- `pnpm install` - Install dependencies
-- `pnpm run dev` - Start development server on port 3000 (auto-opens browser)
-- `pnpm run build` - Build for production (runs TypeScript check then Vite build)
-- `pnpm run preview` - Preview production build
-- `pnpm run lint` - Run ESLint with TypeScript support
+### Core Commands
+- `pnpm install` - Install project dependencies
+- `pnpm run dev` - Start development server on localhost:3000 with auto-open browser
+- `pnpm run build` - Build production version (TypeScript compilation + Vite build)
+- `pnpm run preview` - Preview production build locally
+- `pnpm run lint` - Run ESLint with TypeScript rules
 
-### Package Manager
-This project uses **pnpm** as the package manager, not npm or yarn.
+### Testing and Quality
+Run `pnpm run lint` before committing changes to ensure code quality.
 
-## Architecture Overview
+## Project Architecture
 
 ### Technology Stack
-- **React 18** with TypeScript for type safety
-- **Vite** as build tool with alias support (`@/` → `./src/`)
-- **Tailwind CSS** with custom theme colors and animations
-- **Framer Motion** for smooth animations and transitions
-- **i18next** for internationalization (Chinese, English, Japanese)
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite with React plugin
+- **Styling**: Tailwind CSS with custom theme
+- **Animation**: Framer Motion
+- **Internationalization**: react-i18next with browser language detection
+- **Icons**: Lucide React and Tabler Icons
+- **Package Manager**: pnpm
 
-### Project Structure
+### Key Architecture Patterns
+
+#### Component Structure
+The application follows a modular component architecture:
+- `src/App.tsx` - Main application with page layout and language initialization
+- `src/components/` - Reusable React components for different sections
+- Components are organized by functionality (Navigation, Hero, Features, etc.)
+
+#### Internationalization System
+- Supports Chinese (zh), English (en), and Japanese (ja)
+- Auto-detects browser language with fallback to Chinese
+- Language files stored in `src/locales/`
+- Uses `getRecommendedLanguage()` utility for language selection logic
+- Language preference cached in localStorage
+
+#### Styling System
+- Custom Tailwind theme with game-specific color palette:
+  - **capy**: Capybara warm orange tones (#ff6b2b family)
+  - **lotus**: Lotus pink-purple tones (#ec4aff family) 
+  - **pond**: Pond green-teal tones (#1fc2e5 family)
+- Custom font families for different languages (AlibabaHealthFont2.0CN for CJK)
+- Custom animations: float, bounce-slow, wiggle, pulse-slow
+
+#### Game Integration
+- Global `window.GameEvent` interface for game engine communication
+- Supports game events: 'press-pet', 'change-random-skin', 'render-skin'
+- `ClickEffect` component for interactive feedback
+
+### File Organization
 ```
 src/
-├── components/           # React components
-│   ├── Navigation.tsx    # Main navigation with language switching
-│   ├── Hero.tsx         # Landing hero section
-│   ├── Features.tsx     # Game features showcase
-│   ├── CostumeGallery.tsx # Interactive costume showcase
-│   ├── Download.tsx     # Game download section
-│   ├── Footer.tsx       # Site footer
-│   └── FloatingCapy.tsx # Animated floating capybara
-├── data/
-│   └── costumes.ts      # Game costume data with i18n support
-├── i18n/
-│   └── index.ts         # i18next configuration
-├── locales/             # Translation files (zh/en/ja)
-├── utils/
-│   ├── languageUtils.ts # Language detection utilities
-│   └── version.ts       # Version management
-└── assets/              # Static assets (fonts, etc.)
+├── components/           # React components by feature
+├── i18n/                # Internationalization setup
+├── locales/             # Translation files (zh.json, en.json, ja.json)
+├── utils/               # Utility functions (language detection, version)
+├── data/                # Static data (costumes configuration)
+└── assets/              # Static assets (fonts, images)
 ```
 
-### Custom Theme System
+### Configuration Files
+- `vite.config.ts` - Vite configuration with '@' alias for src/
+- `tailwind.config.js` - Custom Tailwind theme and animations
+- `tsconfig.json` - TypeScript with strict mode and path mapping
+- Server runs on port 3000 with auto-open browser
 
-The project uses a custom Tailwind theme with game-specific colors:
-- **Capy colors**: Orange tones for capybara theming (`capy-500: #ec6d16`)
-- **Lotus colors**: Purple tones for lotus/zen theming (`lotus-500: #d946ef`)
-- **Pond colors**: Teal tones for water/pond theming (`pond-500: #14b8a6`)
+### Public Assets Structure
+The `public/` directory contains extensive game assets:
+- `capy_skins/` - Character skin previews and assets
+- `pet-item/` - Game item assets with Cocos2d integration
+- `images/` - Marketing and promotional images
+- `versions/` - Application version downloads
 
-Custom animations available:
-- `animate-float` - Floating motion (6s cycle)
-- `animate-bounce-slow` - Slow bounce effect
-- `animate-wiggle` - Wiggle rotation effect
-- `animate-pulse-slow` - Slow pulse effect
-
-### Internationalization
-
-The app supports three languages with automatic detection:
-- **Chinese (zh)** - Default language
-- **English (en)**
-- **Japanese (ja)**
-
-Language detection priority: localStorage → sessionStorage → browser language → default (zh)
-
-### Game Integration
-
-The app includes a global `GameEvent` interface for game engine communication:
-```typescript
-window.GameEvent.emit('press-pet')                    // Trigger pet interaction
-window.GameEvent.emit('change-random-skin', {owned: false})  // Random costume
-window.GameEvent.emit('render-skin', {type: 'ownId'})        // Specific costume
-```
-
-## Development Guidelines
-
-### Component Patterns
-- All components use TypeScript with proper typing
-- Framer Motion is used for animations - follow existing patterns
-- i18n is handled via `useTranslation()` hook from react-i18next
-- Costume data is typed and includes multi-language support
-
-### Styling Conventions
-- Use Tailwind utility classes
-- Custom colors follow the capy/lotus/pond theme
-- Responsive design with mobile-first approach
-- Custom fonts: Different font families for each language locale
-
-### Asset Management
-- Game assets are located in `public/capy_skins/` directory
-- Costume images follow structured naming: `qf_hz{category}_{id}_{name}.png`
-- All asset paths are relative from public directory
-
-## Game Context
-
-This is the official website for "敲好运" (BongBongCapy), a casual dress-up idle game featuring capybaras. The site showcases:
-- Game features and mechanics
-- Costume collection system with 6 categories
-- Download links for different platforms
-- Multi-language support for global audience
-
-The website serves as both marketing material and a companion to the actual game, with potential for future game integration features.
+This is a marketing website for "敲好运 BongBongCapy", a cute capybara dress-up idle game. When making changes, maintain the cute, healing aesthetic and ensure proper internationalization support.
