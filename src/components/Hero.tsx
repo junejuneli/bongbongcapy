@@ -83,9 +83,7 @@ const Hero = () => {
                   {t('hero.title')}
                 </span>
                 <br />
-                <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-700 font-cute">
-                  {t('hero.subtitle')}
-                </span>
+                <div style={{ height: 40 }}></div>
               </motion.h1>
             </div>
 
