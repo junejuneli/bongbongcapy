@@ -177,7 +177,7 @@ const PetSkinShowcase = () => {
                     }}
                   >
                     <motion.div
-                      className={`relative w-96 h-[420px] rounded-2xl overflow-hidden ${
+                      className={`relative w-96 h-[380px] rounded-2xl overflow-hidden ${
                         isActive ? 'cursor-default' : 'cursor-pointer'
                       } transform-gpu`}
                       whileHover={!isActive ? { scale: 1.02 } : {}}
@@ -217,7 +217,7 @@ const PetSkinShowcase = () => {
 
                         {/* 装扮图片 */}
                         <motion.div 
-                          className="relative w-80 h-80"
+                          className="relative w-72 h-72"
                           animate={isActive ? {
                             y: [0, -10, 0],
                           } : {}}
@@ -255,7 +255,7 @@ const PetSkinShowcase = () => {
                         </motion.div>
 
                         {/* 装扮信息 */}
-                        <div className="text-center space-y-0 -mt-4">
+                        <div className="text-center space-y-0 -mt-2">
                           <h3 className="text-2xl font-bold text-white drop-shadow-lg">
                             {skin.name}
                           </h3>
@@ -274,7 +274,7 @@ const PetSkinShowcase = () => {
         </div>
 
         {/* 缩略图导航 */}
-        <div className="flex justify-center gap-3 mt-12">
+        <div className="flex justify-center gap-3 mt-8">
           {skins.map((skin, index) => (
             <motion.button
               key={skin.id}

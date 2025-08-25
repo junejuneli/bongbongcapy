@@ -78,11 +78,11 @@ const Features = () => {
             <span className="text-capy-700 font-semibold font-cute">{t('features.badge')}</span>
           </motion.div>
           
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-display font-bold mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold mb-4 sm:mb-6">
             <span className="text-gradient">{t('features.title')}</span>
           </h2>
           
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-body px-4">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed font-body px-4">
             {t('features.subtitle')}
           </p>
         </motion.div>
@@ -92,7 +92,7 @@ const Features = () => {
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="card-float p-4 sm:p-6 lg:p-8 text-center group cursor-pointer"
+              className="card-float p-3 sm:p-4 lg:p-6 text-center group cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -102,26 +102,26 @@ const Features = () => {
             >
               {/* 图标 */}
               <motion.div
-                className={`inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r ${feature.gradient} mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}
+                className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r ${feature.gradient} mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.8 }}
               >
-                <feature.icon size={32} className="sm:w-10 sm:h-10 text-white" />
+                <feature.icon size={24} className="sm:w-8 sm:h-8 text-white" />
               </motion.div>
 
               {/* 标题 */}
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-2 sm:mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-capy-600 group-hover:to-lotus-600 group-hover:bg-clip-text transition-all duration-300 font-cute">
+              <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800 mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-capy-600 group-hover:to-lotus-600 group-hover:bg-clip-text transition-all duration-300 font-cute">
                 {feature.title}
               </h3>
 
               {/* 描述 */}
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-body">
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed font-body">
                 {feature.description}
               </p>
 
               {/* 装饰性底边 */}
               <motion.div
-                className={`h-1 bg-gradient-to-r ${feature.gradient} rounded-full mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                className={`h-1 bg-gradient-to-r ${feature.gradient} rounded-full mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                 initial={{ width: 0 }}
                 whileHover={{ width: '100%' }}
                 transition={{ duration: 0.4 }}

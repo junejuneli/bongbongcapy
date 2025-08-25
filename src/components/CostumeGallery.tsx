@@ -96,7 +96,7 @@ const CostumeGallery = () => {
             <span className="text-lotus-700 font-cute font-semibold">{t('costumes.badge')}</span>
           </motion.div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-display font-bold mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold mb-4 sm:mb-6">
             <span className="text-gradient">{t('costumes.title')}</span>
             <br />
             <span className="text-gray-800">{t('costumes.subtitle')}</span>
@@ -247,7 +247,7 @@ const CostumeGallery = () => {
         </AnimatePresence>
 
         {/* 当前装扮总览 */}
-        {Object.keys(selectedCostumes).length > 0 && (
+        {/* {Object.keys(selectedCostumes).length > 0 && (
           <motion.div
             className="mt-12 p-6 glass-morphism rounded-3xl"
             initial={{ opacity: 0, y: 20 }}
@@ -280,7 +280,7 @@ const CostumeGallery = () => {
               })}
             </div>
           </motion.div>
-        )}
+        )} */}
 
         {/* 底部提示 */}
         <motion.div
