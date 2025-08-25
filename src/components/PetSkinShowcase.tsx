@@ -123,7 +123,7 @@ const PetSkinShowcase = () => {
             >
               <IconWand size={28} className="text-lotus-500" />
             </motion.div>
-            <h2 className="text-4xl lg:text-5xl font-display font-bold">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold">
               <span className="text-gradient bg-gradient-to-r from-capy-500 via-lotus-500 to-pond-500 bg-clip-text">
                 {t('petSkins.title', { defaultValue: '水豚换装秀' })}
               </span>
@@ -135,7 +135,7 @@ const PetSkinShowcase = () => {
               <IconSparkles size={28} className="text-capy-500" />
             </motion.div>
           </motion.div>
-          <p className="text-lg text-gray-600 font-body max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 font-body max-w-2xl mx-auto">
             {t('petSkins.subtitle', { defaultValue: '解锁各种可爱装扮，打造独一无二的水豚伙伴' })}
           </p>
         </motion.div>

@@ -154,13 +154,13 @@ const Download = () => {
               <span className="text-capy-700 font-semibold font-cute">{t('download.badge')}</span>
             </motion.div>
 
-            <h2 className="text-4xl lg:text-6xl font-display font-bold mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-display font-bold mb-6">
               <span className="text-gradient">{t('download.title')}</span>
               <br />
               <span className="text-gray-800">{t('download.subtitle')}</span>
             </h2>
 
-            <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0 font-body">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0 font-body">
               {t('download.description')}
             </p>
 

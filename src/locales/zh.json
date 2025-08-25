@@ -19,7 +19,7 @@
     },
     "features": {
       "healing": "治愈系",
-      "collection": "换装收集", 
+      "collection": "换装收集",
       "blessing": "功德许愿"
     },
     "cta": {
@@ -37,7 +37,7 @@
         "description": "工作学习间隙的完美卡皮巴拉搭子，轻松挂机放置不影响正事，缓解工作压力和学习疲劳"
       },
       "healing": {
-        "title": "治愈系陪伴 | 心灵解压神器", 
+        "title": "治愈系陪伴 | 心灵解压神器",
         "description": "超可爱卡皮巴拉水豚24小时温暖陪伴，治愈疲惫心灵，缓解工作学习压力，带来内心宁静"
       },
       "blessing": {
@@ -49,7 +49,7 @@
         "description": "丰富的卡皮巴拉换装系统，收集数百种风格的奇珍异宝服装，打造独一无二的个性水豚形象"
       },
       "idle": {
-        "title": "放置挂机玩法 | 懒人游戏", 
+        "title": "放置挂机玩法 | 懒人游戏",
         "description": "无需频繁操作的放置类游戏，后台自动挂机运行，随时享受卡皮巴拉成长乐趣和收获惊喜"
       },
       "time": {
@@ -62,14 +62,14 @@
   "gameplay": {
     "badge": "游戏玩法介绍",
     "title": "新手友好，简单易上手",
-    "subtitle": "治愈系挂机体验，零门槛入门", 
+    "subtitle": "治愈系挂机体验，零门槛入门",
     "description": "无需复杂操作和游戏技巧，四个简单步骤即可享受轻松愉快的卡皮巴拉水豚陪伴时光",
     "highlights": {
       "title": "轻松挂机，治愈陪伴",
       "description": "《敲好运》采用创新挂机玩法，让你在忙碌工作学习之余也能享受游戏乐趣。可爱的卡皮巴拉24小时陪伴，自动积攒功德。",
       "features": {
         "goal": "目标明确 - 简单许愿系统",
-        "time": "时间灵活 - 随时暂停继续", 
+        "time": "时间灵活 - 随时暂停继续",
         "surprise": "惊喜不断 - 每次许愿新发现",
         "collect": "收集乐趣 - 丰富服装等你收集"
       }
@@ -81,7 +81,7 @@
         "description": "启动游戏，让卡皮巴拉开始功德之旅"
       },
       "accumulate": {
-        "title": "积攒功德", 
+        "title": "积攒功德",
         "description": "工作学习间隙，自动积累功德值"
       },
       "wish": {
@@ -101,20 +101,20 @@
   "costumes": {
     "badge": "奇珍异宝",
     "title": "服装收集",
-    "subtitle": "展现个性魅力",
+    "subtitle": "",
     "description": "丰富多样的服装系统，从神话传说到田园风光，每一件都是独特艺术品",
-          "categories": {
-        "headwear": "头饰",
-        "clothing": "服装",
-        "handheld": "手持",
-        "woodblock": "木鱼",
-        "text": "敲击文字",
-        "lotus": "莲花底座",
-        "merit": "功德"
-      },
+    "categories": {
+      "headwear": "头饰",
+      "clothing": "服装",
+      "handheld": "手持",
+      "woodblock": "木鱼",
+      "text": "敲击文字",
+      "lotus": "莲花底座",
+      "merit": "功德"
+    },
     "rarity": {
       "legendary": "传说",
-      "epic": "史诗", 
+      "epic": "史诗",
       "rare": "稀有",
       "common": "普通"
     },
@@ -124,7 +124,7 @@
   "download": {
     "badge": "立即下载",
     "title": "开始你的",
-    "subtitle": "卡皮巴拉之旅", 
+    "subtitle": "卡皮巴拉之旅",
     "description": "免费下载《敲好运》，与超可爱的卡皮巴拉一起开启治愈的挂机时光。现在下载即可获得新手礼包，包含限定服装和额外功德值！",
     "stats": {
       "users": "用户喜爱",
@@ -133,7 +133,7 @@
     },
     "features": [
       "🆓 完全免费游戏",
-      "☁️ 云端数据保存", 
+      "☁️ 云端数据保存",
       "🎁 定期内容更新"
     ],
     "platforms": {
@@ -142,7 +142,7 @@
         "description": "支持 Windows 10/11"
       },
       "macos": {
-        "name": "macOS", 
+        "name": "macOS",
         "description": "支持 macOS 12+"
       },
       "linux": {
@@ -162,7 +162,7 @@
         "os_macos": "macOS Catalina (10.15) 及更高版本",
         "os_linux": "Ubuntu 18.04 及更高版本 / 其他 Linux 发行版",
         "memory": "内存：4GB RAM",
-        "storage": "存储：2GB 可用空间", 
+        "storage": "存储：2GB 可用空间",
         "network": "网络：稳定互联网连接"
       }
     }
@@ -173,7 +173,7 @@
       "game": {
         "title": "游戏",
         "download": "下载游戏",
-        "features": "游戏特色", 
+        "features": "游戏特色",
         "gameplay": "玩法介绍",
         "costumes": "服装收集"
       },
@@ -185,7 +185,7 @@
         "feedback": "反馈建议"
       },
       "community": {
-        "title": "社区", 
+        "title": "社区",
         "qq": "官方QQ群",
         "wechat": "微信群",
         "forum": "用户论坛",
@@ -197,14 +197,14 @@
     "for": "for all capybara lovers",
     "links": {
       "privacy": "隐私政策",
-      "terms": "服务条款", 
+      "terms": "服务条款",
       "cookies": "Cookie政策"
     }
   },
   "floating": {
     "messages": [
       "嗨！我是你的卡皮巴拉搭子~ 🐹",
-      "记得要好好工作学习哦！💪", 
+      "记得要好好工作学习哦！💪",
       "累了可以和我一起许愿~ ✨",
       "新服装又到了！快来看看~ 👗",
       "功德值又增加了一些呢~ 🌸"
@@ -213,7 +213,7 @@
   },
   "stats": {
     "users": "用户喜爱",
-    "rating": "评分", 
+    "rating": "评分",
     "awards": "获奖作品"
   },
   "petSkins": {

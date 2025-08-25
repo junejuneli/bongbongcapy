@@ -19,7 +19,7 @@
     },
     "features": {
       "healing": "Healing",
-      "collection": "Dress-up Collection", 
+      "collection": "Dress-up Collection",
       "blessing": "Merit Wishes"
     },
     "cta": {
@@ -37,7 +37,7 @@
         "description": "The perfect companion during work & study breaks, easy idle gameplay"
       },
       "healing": {
-        "title": "Healing Companion", 
+        "title": "Healing Companion",
         "description": "Super cute capybara accompanies you 24/7, healing your weary soul"
       },
       "blessing": {
@@ -49,7 +49,7 @@
         "description": "Rich dress-up system, collect various styles of treasure costumes"
       },
       "idle": {
-        "title": "Idle Gameplay", 
+        "title": "Idle Gameplay",
         "description": "No frequent operations needed, enjoy fun and growth while idle"
       },
       "time": {
@@ -62,14 +62,14 @@
   "gameplay": {
     "badge": "Gameplay",
     "title": "Simple & Easy",
-    "subtitle": "Healing Idle Experience", 
+    "subtitle": "Healing Idle Experience",
     "description": "No complex operations, enjoy relaxing capybara time in four simple steps",
     "highlights": {
       "title": "Relaxing Idle, Healing Companion",
       "description": "BongBongCapy features innovative idle gameplay, letting you enjoy gaming fun while busy with work and study. Cute capybara accompanies you 24/7, automatically accumulating merit.",
       "features": {
         "goal": "Clear Goals - Simple wish system",
-        "time": "Flexible Time - Pause and resume anytime", 
+        "time": "Flexible Time - Pause and resume anytime",
         "surprise": "Endless Surprises - New discoveries with each wish",
         "collect": "Collection Fun - Rich costumes await you"
       }
@@ -81,7 +81,7 @@
         "description": "Launch the game, let capybara begin its merit journey"
       },
       "accumulate": {
-        "title": "Accumulate Merit", 
+        "title": "Accumulate Merit",
         "description": "During work & study breaks, automatically accumulate merit points"
       },
       "wish": {
@@ -100,21 +100,21 @@
   },
   "costumes": {
     "badge": "Treasures",
-    "title": "Costume Collection",
-    "subtitle": "Show Your Personality",
+    "title": "Costume Collection and Show Your Personality",
+    "subtitle": "",
     "description": "Rich and diverse costume system, from mythological legends to pastoral scenes, each piece is a unique artwork",
-          "categories": {
-        "headwear": "Headwear",
-        "clothing": "Clothing",
-        "handheld": "Handheld",
-        "woodblock": "Woodblock",
-        "text": "Text",
-        "lotus": "Lotus",
-        "merit": "Merit"
-      },
+    "categories": {
+      "headwear": "Headwear",
+      "clothing": "Clothing",
+      "handheld": "Handheld",
+      "woodblock": "Woodblock",
+      "text": "Text",
+      "lotus": "Lotus",
+      "merit": "Merit"
+    },
     "rarity": {
       "legendary": "Legendary",
-      "epic": "Epic", 
+      "epic": "Epic",
       "rare": "Rare",
       "common": "Common"
     },
@@ -124,7 +124,7 @@
   "download": {
     "badge": "Download Now",
     "title": "Start Your",
-    "subtitle": "Capybara Journey", 
+    "subtitle": "Capybara Journey",
     "description": "Download BongBongCapy for free and embark on a healing idle journey with adorable capybaras. Download now to get the starter pack with exclusive costumes and extra merit points!",
     "stats": {
       "users": "Users Love",
@@ -133,7 +133,7 @@
     },
     "features": [
       "🆓 Completely Free Game",
-      "☁️ Cloud Data Save", 
+      "☁️ Cloud Data Save",
       "🎁 Regular Content Updates"
     ],
     "platforms": {
@@ -142,7 +142,7 @@
         "description": "Supports Windows 10/11"
       },
       "macos": {
-        "name": "macOS", 
+        "name": "macOS",
         "description": "Supports macOS 12+"
       },
       "linux": {
@@ -159,7 +159,7 @@
       "linux": "Linux Version",
       "items": {
         "os_windows": "Windows 7 and later",
-        "os_macos": "macOS Catalina (10.15) and later", 
+        "os_macos": "macOS Catalina (10.15) and later",
         "os_linux": "Ubuntu 18.04 and later / Other Linux distributions",
         "memory": "Memory: 4GB RAM",
         "storage": "Storage: 2GB available space",
@@ -173,7 +173,7 @@
       "game": {
         "title": "Game",
         "download": "Download Game",
-        "features": "Game Features", 
+        "features": "Game Features",
         "gameplay": "Gameplay Guide",
         "costumes": "Costume Collection"
       },
@@ -185,7 +185,7 @@
         "feedback": "Feedback"
       },
       "community": {
-        "title": "Community", 
+        "title": "Community",
         "qq": "Official QQ Group",
         "wechat": "WeChat Group",
         "forum": "User Forum",
@@ -197,14 +197,14 @@
     "for": "for all capybara lovers",
     "links": {
       "privacy": "Privacy Policy",
-      "terms": "Terms of Service", 
+      "terms": "Terms of Service",
       "cookies": "Cookie Policy"
     }
   },
   "floating": {
     "messages": [
       "Hi! I'm your capybara buddy~ 🐹",
-      "Remember to work and study well! 💪", 
+      "Remember to work and study well! 💪",
       "When tired, make wishes with me~ ✨",
       "New costumes arrived! Come check them out~ 👗",
       "Merit points increased a bit~ 🌸"
@@ -213,7 +213,7 @@
   },
   "stats": {
     "users": "Users Love",
-    "rating": "Rating", 
+    "rating": "Rating",
     "awards": "Awards Won"
   },
   "petSkins": {
