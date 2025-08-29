@@ -6,35 +6,35 @@ const Footer = () => {
   const { t } = useTranslation()
   const currentYear = new Date().getFullYear()
 
-  const footerLinks = [
-    {
-      title: t('footer.sections.game.title'),
-      links: [
-        { name: t('footer.sections.game.download'), href: '#download' },
-        { name: t('footer.sections.game.features'), href: '#features' },
-        { name: t('footer.sections.game.gameplay'), href: '#gameplay' },
-        { name: t('footer.sections.game.costumes'), href: '#costumes' }
-      ]
-    },
-    {
-      title: t('footer.sections.support.title'),
-      links: [
-        { name: t('footer.sections.support.guide'), href: '#' },
-        { name: t('footer.sections.support.faq'), href: '#' },
-        { name: t('footer.sections.support.tech'), href: '#' },
-        { name: t('footer.sections.support.feedback'), href: '#' }
-      ]
-    },
-    {
-      title: t('footer.sections.community.title'),
-      links: [
-        { name: t('footer.sections.community.qq'), href: '#' },
-        { name: t('footer.sections.community.wechat'), href: '#' },
-        { name: t('footer.sections.community.forum'), href: '#' },
-        { name: t('footer.sections.community.blog'), href: '#' }
-      ]
-    }
-  ]
+  // const footerLinks = [
+  //   {
+  //     title: t('footer.sections.game.title'),
+  //     links: [
+  //       { name: t('footer.sections.game.download'), href: '#download' },
+  //       { name: t('footer.sections.game.features'), href: '#features' },
+  //       { name: t('footer.sections.game.gameplay'), href: '#gameplay' },
+  //       { name: t('footer.sections.game.costumes'), href: '#costumes' }
+  //     ]
+  //   },
+  //   {
+  //     title: t('footer.sections.support.title'),
+  //     links: [
+  //       { name: t('footer.sections.support.guide'), href: '#' },
+  //       { name: t('footer.sections.support.faq'), href: '#' },
+  //       { name: t('footer.sections.support.tech'), href: '#' },
+  //       { name: t('footer.sections.support.feedback'), href: '#' }
+  //     ]
+  //   },
+  //   {
+  //     title: t('footer.sections.community.title'),
+  //     links: [
+  //       { name: t('footer.sections.community.qq'), href: '#' },
+  //       { name: t('footer.sections.community.wechat'), href: '#' },
+  //       { name: t('footer.sections.community.forum'), href: '#' },
+  //       { name: t('footer.sections.community.blog'), href: '#' }
+  //     ]
+  //   }
+  // ]
 
   const socialLinks = [
     { icon: IconBrandGithub, href: '#', label: 'GitHub' },
