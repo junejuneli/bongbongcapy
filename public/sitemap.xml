@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- 主页 - 中文 -->
+  <url>
+    <loc>https://bongbongcapy.com/</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://bongbongcapy.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bongbongcapy.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bongbongcapy.com/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bongbongcapy.com/" />
+    
+    <!-- 游戏截图和皮肤预览图片 -->
+    <image:image>
+      <image:loc>https://bongbongcapy.com/images/主宣传图1232.jpg</image:loc>
+      <image:title>敲好运 BongBongCapy 主宣传图</image:title>
+      <image:caption>治愈系卡皮巴拉换装挂机游戏主宣传图</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://bongbongcapy.com/images/库主页3840.jpg</image:loc>
+      <image:title>敲好运 BongBongCapy 游戏截图</image:title>
+      <image:caption>游戏界面展示图</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://bongbongcapy.com/images/背景图1438.jpg</image:loc>
+      <image:title>敲好运 BongBongCapy 游戏背景</image:title>
+      <image:caption>游戏场景背景图</image:caption>
+    </image:image>
+    
+    <!-- 皮肤预览图 -->
+    <image:image>
+      <image:loc>https://bongbongcapy.com/images/skins/外观1.png</image:loc>
+      <image:title>卡皮巴拉皮肤外观1</image:title>
+      <image:caption>游戏角色换装皮肤预览</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://bongbongcapy.com/images/skins/外观2.png</image:loc>
+      <image:title>卡皮巴拉皮肤外观2</image:title>
+      <image:caption>游戏角色换装皮肤预览</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://bongbongcapy.com/images/skins/外观3.png</image:loc>
+      <image:title>卡皮巴拉皮肤外观3</image:title>
+      <image:caption>游戏角色换装皮肤预览</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- 游戏下载页面 -->
+  <url>
+    <loc>https://bongbongcapy.com/download</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://bongbongcapy.com/download" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bongbongcapy.com/download?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bongbongcapy.com/download?lang=ja" />
+  </url>
+  
+  <!-- 游戏特色功能页面 -->
+  <url>
+    <loc>https://bongbongcapy.com/features</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://bongbongcapy.com/features" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bongbongcapy.com/features?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bongbongcapy.com/features?lang=ja" />
+  </url>
+  
+  <!-- 服装展示页面 -->
+  <url>
+    <loc>https://bongbongcapy.com/costumes</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://bongbongcapy.com/costumes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://bongbongcapy.com/costumes?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://bongbongcapy.com/costumes?lang=ja" />
+  </url>
+  
+  <!-- 游戏版本更新页面 -->
+  <url>
+    <loc>https://bongbongcapy.com/versions</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- 游戏互动体验页面 -->
+  <url>
+    <loc>https://bongbongcapy.com/pet-item/index.html</loc>
+    <lastmod>2024-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>

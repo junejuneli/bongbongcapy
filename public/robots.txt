@@ -1,0 +1,59 @@
+# Robots.txt for BongBongCapy - 敲好运卡皮巴拉游戏官网
+# 允许所有搜索引擎抓取网站内容
+
+User-agent: *
+Allow: /
+
+# 允许抓取重要资源
+Allow: /images/
+Allow: /capy_skins/
+Allow: /pet-item/
+Allow: /versions/
+
+# 禁止抓取源码和配置文件
+Disallow: /src/
+Disallow: *.json
+Disallow: *.map
+Disallow: *.ts
+Disallow: *.tsx
+
+# 特别允许抓取配置文件中的皮肤配置（对SEO有益）
+Allow: /capy_skins/configs.json
+Allow: /versions/latest.json
+
+# 网站地图位置
+Sitemap: https://bongbongcapy.com/sitemap.xml
+
+# 爬取延时（对服务器友好）
+Crawl-delay: 1
+
+# 针对不同搜索引擎的特殊设置
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot  
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: 360Spider
+Allow: /
+Crawl-delay: 2
+
+User-agent: Sogou web spider
+Allow: /
+Crawl-delay: 2
+
+# 社交媒体爬虫
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
