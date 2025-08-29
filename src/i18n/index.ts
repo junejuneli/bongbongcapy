@@ -33,13 +33,14 @@ i18n
     },
     
     detection: {
-      // 检测顺序：用户手动设置 > 浏览器语言 > 默认中文
-      order: ['localStorage', 'sessionStorage', 'navigator', 'htmlTag'],
+      // 检测顺序：URL参数 > 用户手动设置 > 浏览器语言 > 默认中文
+      order: ['querystring', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag'],
       // 缓存用户选择到 localStorage
       caches: ['localStorage'],
       // 检测的键名
       lookupLocalStorage: 'i18nextLng',
       lookupSessionStorage: 'i18nextLng',
+      lookupQuerystring: 'lang',
       // 浏览器语言映射
       convertDetectedLanguage: (lng) => {
         // 支持的语言列表

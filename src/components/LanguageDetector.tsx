@@ -1,13 +1,21 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IconLanguage } from '@tabler/icons-react'
-import { isFirstVisit, detectBrowserLanguage, getLanguageInfo } from '../utils/languageUtils'
+import { isFirstVisit, detectBrowserLanguage, getLanguageInfo, getLanguageFromURL, setLanguageInURL, setUserLanguage } from '../utils/languageUtils'
 
 const LanguageDetector = () => {
   const [showDetector, setShowDetector] = useState(false)
   const [detectedLang, setDetectedLang] = useState('')
 
   useEffect(() => {
+    // 检查URL参数中是否已有语言设置
+    const urlLang = getLanguageFromURL()
+    if (urlLang) {
+      // 如果URL中有语言参数，直接使用并保存
+      setUserLanguage(urlLang)
+      return
+    }
+    
     // 检查是否是首次访问
     if (isFirstVisit()) {
       // 检测浏览器语言
@@ -36,6 +44,9 @@ const LanguageDetector = () => {
   }
 
   const handleConfirm = () => {
+    // 确认使用检测到的语言，保存到localStorage和URL
+    setUserLanguage(detectedLang as 'zh' | 'en' | 'ja')
+    setLanguageInURL(detectedLang as 'zh' | 'en' | 'ja')
     setShowDetector(false)
   }
 

@@ -67,17 +67,48 @@ export const setUserLanguage = (language: SupportedLanguage): void => {
 }
 
 /**
+ * 获取URL中的语言参数
+ * @returns URL中的语言代码，如果没有或无效则返回null
+ */
+export const getLanguageFromURL = (): SupportedLanguage | null => {
+  const urlParams = new URLSearchParams(window.location.search)
+  const urlLang = urlParams.get('lang')
+  
+  if (urlLang && SUPPORTED_LANGUAGES.includes(urlLang as SupportedLanguage)) {
+    return urlLang as SupportedLanguage
+  }
+  
+  return null
+}
+
+/**
+ * 设置URL中的语言参数
+ * @param language 语言代码
+ */
+export const setLanguageInURL = (language: SupportedLanguage): void => {
+  const url = new URL(window.location.href)
+  url.searchParams.set('lang', language)
+  window.history.replaceState({}, '', url.toString())
+}
+
+/**
  * 获取推荐的语言
  * @returns 推荐的语言代码
  */
 export const getRecommendedLanguage = (): SupportedLanguage => {
-  // 优先使用用户设置的语言
+  // 1. 优先使用URL参数中的语言
+  const urlLanguage = getLanguageFromURL()
+  if (urlLanguage) {
+    return urlLanguage
+  }
+  
+  // 2. 其次使用用户设置的语言
   const userLanguage = getUserLanguage()
   if (userLanguage) {
     return userLanguage
   }
   
-  // 如果没有用户设置，使用浏览器检测的语言
+  // 3. 最后使用浏览器检测的语言
   return detectBrowserLanguage()
 }
 

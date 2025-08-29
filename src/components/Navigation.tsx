@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { IconMenu2, IconX, IconWorld } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
-import { getAllLanguageInfo, setUserLanguage } from '../utils/languageUtils'
+import { getAllLanguageInfo, setUserLanguage, setLanguageInURL } from '../utils/languageUtils'
 
 const Navigation = () => {
   const { t, i18n } = useTranslation()
@@ -31,6 +31,8 @@ const Navigation = () => {
   const changeLanguage = (lng: string) => {
     // 保存用户语言选择到 localStorage
     setUserLanguage(lng as 'zh' | 'en' | 'ja')
+    // 同时更新URL参数
+    setLanguageInURL(lng as 'zh' | 'en' | 'ja')
     i18n.changeLanguage(lng)
     setIsLangMenuOpen(false)
   }

@@ -1,0 +1,106 @@
+{
+  "site": {
+    "name": "敲好运 BongBongCapy",
+    "url": "https://capy.ybxqk.cn",
+    "domain": "capy.ybxqk.cn",
+    "description": "治愈系卡皮巴拉换装挂机游戏，你的专属工作学习摸鱼搭子",
+    "keywords": "敲好运,BongBongCapy,卡皮巴拉游戏,水豚游戏,换装游戏,挂机游戏,治愈系游戏,摸鱼神器,工作伙伴",
+    "language": "zh-CN",
+    "country": "CN"
+  },
+  "searchEngines": {
+    "baidu": {
+      "name": "百度",
+      "webmasterUrl": "https://ziyuan.baidu.com/",
+      "verificationTag": "codeva-ybxqk2024",
+      "submitUrl": "http://data.zz.baidu.com/urls",
+      "sitemapSubmit": "https://capy.ybxqk.cn/sitemap.xml",
+      "optimizations": [
+        "中文内容优化",
+        "移动端适配",
+        "页面加载速度优化",
+        "结构化数据标记",
+        "图片alt标签优化"
+      ]
+    },
+    "so360": {
+      "name": "360搜索",
+      "webmasterUrl": "https://zhanzhang.so.com/",
+      "verificationTag": "360capy2024",
+      "optimizations": [
+        "安全性标记",
+        "移动端友好",
+        "内容质量优化"
+      ]
+    },
+    "sogou": {
+      "name": "搜狗",
+      "webmasterUrl": "http://zhanzhang.sogou.com/",
+      "verificationTag": "sogoucapy2024",
+      "optimizations": [
+        "微信生态优化",
+        "社交分享优化",
+        "内容原创性"
+      ]
+    },
+    "shenma": {
+      "name": "神马搜索",
+      "webmasterUrl": "https://zhanzhang.sm.cn/",
+      "verificationTag": "shenmacapy2024",
+      "optimizations": [
+        "移动端专优",
+        "UC浏览器适配",
+        "阿里生态整合"
+      ]
+    }
+  },
+  "seoTips": {
+    "baidu": [
+      "定期提交sitemap到百度站长平台",
+      "使用百度统计监控网站流量",
+      "优化页面标题，包含核心关键词",
+      "增加高质量的中文原创内容",
+      "建立与游戏相关的内部链接结构",
+      "获取来自游戏论坛和社区的外链"
+    ],
+    "content": [
+      "定期更新游戏版本和皮肤内容",
+      "撰写游戏攻略和使用技巧",
+      "制作游戏截图和演示视频",
+      "建立用户交流社区",
+      "发布开发日志和更新说明"
+    ],
+    "technical": [
+      "确保网站HTTPS安全连接",
+      "优化页面加载速度（目标<3秒）",
+      "实现响应式设计适配移动端",
+      "添加结构化数据标记",
+      "设置正确的缓存策略",
+      "监控网站可用性和性能"
+    ]
+  },
+  "submission": {
+    "schedule": "每周提交一次新URL到搜索引擎",
+    "priority": [
+      "主页和游戏下载页",
+      "新版本发布页面",
+      "游戏特色功能页面",
+      "皮肤展示和更新页面"
+    ]
+  },
+  "monitoring": {
+    "tools": [
+      "百度统计",
+      "360统计", 
+      "搜狗统计",
+      "Google Analytics（作为补充）"
+    ],
+    "metrics": [
+      "搜索引擎收录量",
+      "关键词排名位置",
+      "网站访问量和用户行为",
+      "页面加载速度",
+      "移动端用户体验评分"
+    ]
+  }
+}

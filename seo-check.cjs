@@ -28,10 +28,10 @@ class SEOChecker {
     
     // 检查必要的URL
     const requiredUrls = [
-      'https://bongbongcapy.com/',
-      'https://bongbongcapy.com/download',
-      'https://bongbongcapy.com/features',
-      'https://bongbongcapy.com/costumes'
+      'https://capy.ybxqk.cn/',
+      'https://capy.ybxqk.cn/download',
+      'https://capy.ybxqk.cn/features',
+      'https://capy.ybxqk.cn/costumes'
     ];
     
     requiredUrls.forEach(url => {
@@ -120,6 +120,22 @@ class SEOChecker {
       this.warnings.push('⚠️ HTML缺少多语言SEO标签');
     }
     
+    // 检查中国搜索引擎特定标签
+    const chineseSearchEngines = [
+      { tag: 'baidu-site-verification', name: '百度站长验证' },
+      { tag: '360-site-verification', name: '360搜索验证' },
+      { tag: 'sogou_site_verification', name: '搜狗搜索验证' },
+      { tag: 'shenma-site-verification', name: '神马搜索验证' }
+    ];
+    
+    chineseSearchEngines.forEach(({ tag, name }) => {
+      if (html.includes(tag)) {
+        this.success.push(`✅ ${name}标签存在`);
+      } else {
+        this.warnings.push(`⚠️ ${name}标签缺失`);
+      }
+    });
+    
     // 检查图片alt标签建议
     const imgCount = (html.match(/<img/g) || []).length;
     const altCount = (html.match(/alt="/g) || []).length;
@@ -168,10 +184,12 @@ class SEOChecker {
     
     console.log('\n💡 SEO优化建议:');
     console.log('  1. 定期更新sitemap.xml中的lastmod时间');
-    console.log('  2. 监控Google Search Console的抓取状态');
-    console.log('  3. 确保网站加载速度优化');
-    console.log('  4. 添加更多高质量的原创内容');
-    console.log('  5. 建立高质量的外部链接');
+    console.log('  2. 提交网站到百度站长平台、360搜索、搜狗等中国搜索引擎');
+    console.log('  3. 监控百度统计和360统计的数据');
+    console.log('  4. 确保网站加载速度优化（中国网络环境）');
+    console.log('  5. 添加更多高质量的中文原创游戏内容');
+    console.log('  6. 在游戏论坛和社区建立外部链接');
+    console.log('  7. 使用 chinese-seo.json 配置文件指导SEO策略');
     
     return score >= 80;
   }

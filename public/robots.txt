@@ -22,7 +22,7 @@ Allow: /capy_skins/configs.json
 Allow: /versions/latest.json
 
 # 网站地图位置
-Sitemap: https://bongbongcapy.com/sitemap.xml
+Sitemap: https://capy.ybxqk.cn/sitemap.xml
 
 # 爬取延时（对服务器友好）
 Crawl-delay: 1
