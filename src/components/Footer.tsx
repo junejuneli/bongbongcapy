@@ -102,7 +102,7 @@ const Footer = () => {
             </motion.div>
 
             {/* 链接区域 */}
-            <div className="lg:col-span-3 grid md:grid-cols-3 gap-8">
+            {/* <div className="lg:col-span-3 grid md:grid-cols-3 gap-8">
               {footerLinks.map((section, sectionIndex) => (
                 <motion.div
                   key={section.title}
@@ -134,7 +134,7 @@ const Footer = () => {
                   </ul>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
 

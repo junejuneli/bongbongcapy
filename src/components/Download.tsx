@@ -56,16 +56,52 @@ const Download = () => {
       platform: 'mac' as const,
       available: true
     },
-    {
-      name: t('download.platforms.linux.name'),
-      icon: Monitor,
-      description: t('download.platforms.linux.description'),
-      platform: 'linux' as const,
-      available: true
-    }
+    // {
+    //   name: t('download.platforms.linux.name'),
+    //   icon: Monitor,
+    //   description: t('download.platforms.linux.description'),
+    //   platform: 'linux' as const,
+    //   available: true
+    // }
   ]
 
   const features = t('download.features', { returnObjects: true }) as string[]
+
+  const systemRequirements = [
+    {
+      platform: 'windows',
+      title: t('download.requirements.windows'),
+      color: 'capy',
+      requirements: [
+        t('download.requirements.items.os_windows'),
+        t('download.requirements.items.memory'),
+        t('download.requirements.items.storage'),
+        t('download.requirements.items.network')
+      ]
+    },
+    {
+      platform: 'macos',
+      title: t('download.requirements.macos'),
+      color: 'lotus',
+      requirements: [
+        t('download.requirements.items.os_macos'),
+        t('download.requirements.items.memory'),
+        t('download.requirements.items.storage'),
+        t('download.requirements.items.network')
+      ]
+    },
+    // {
+    //   platform: 'linux',
+    //   title: t('download.requirements.linux'),
+    //   color: 'pond',
+    //   requirements: [
+    //     t('download.requirements.items.os_linux'),
+    //     t('download.requirements.items.memory'),
+    //     t('download.requirements.items.storage'),
+    //     t('download.requirements.items.network')
+    //   ]
+    // }
+  ]
 
   const handleDownload = (platform: 'mac' | 'windows' | 'linux') => {
     const downloadUrl = getPlatformDownloadUrl(downloads, platform)
@@ -263,43 +299,42 @@ const Download = () => {
           </motion.div>
         </div>
 
-        {/* 底部额外信息 */}
+        {/* 系统要求 */}
         <motion.div
-          className="text-center mt-20 p-8 card-float"
+          className="mt-20 p-8 card-float"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-4 font-display">{t('download.requirements.title')}</h3>
-          <div className="grid md:grid-cols-3 gap-6 text-left">
-            <div>
-              <h4 className="font-semibold text-capy-600 mb-3 font-cute">{t('download.requirements.windows')}</h4>
-              <ul className="space-y-2 text-gray-600 font-body text-sm">
-                <li>• {t('download.requirements.items.os_windows')}</li>
-                <li>• {t('download.requirements.items.memory')}</li>
-                <li>• {t('download.requirements.items.storage')}</li>
-                <li>• {t('download.requirements.items.network')}</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-lotus-600 mb-3 font-cute">{t('download.requirements.macos')}</h4>
-              <ul className="space-y-2 text-gray-600 font-body text-sm">
-                <li>• {t('download.requirements.items.os_macos')}</li>
-                <li>• {t('download.requirements.items.memory')}</li>
-                <li>• {t('download.requirements.items.storage')}</li>
-                <li>• {t('download.requirements.items.network')}</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-pond-600 mb-3 font-cute">{t('download.requirements.linux')}</h4>
-              <ul className="space-y-2 text-gray-600 font-body text-sm">
-                <li>• {t('download.requirements.items.os_linux')}</li>
-                <li>• {t('download.requirements.items.memory')}</li>
-                <li>• {t('download.requirements.items.storage')}</li>
-                <li>• {t('download.requirements.items.network')}</li>
-              </ul>
-            </div>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 font-display">{t('download.requirements.title')}</h3>
+            {/* <p className="text-gray-600 mt-2">{t('download.requirements.description') || '请确保您的设备满足以下系统要求'}</p> */}
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {systemRequirements.map((req, index) => (
+              <motion.div 
+                key={req.platform}
+                className="bg-white/50 rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 * index }}
+              >
+                <div className="text-center mb-4">
+                  <h4 className={`text-xl font-semibold text-${req.color}-600 font-cute`}>{req.title}</h4>
+                </div>
+                <div className="space-y-3">
+                  {req.requirements.map((requirement, reqIndex) => (
+                    <div key={reqIndex} className="flex items-start gap-3 text-sm text-gray-700">
+                      <span className={`inline-block w-1.5 h-1.5 rounded-full bg-${req.color}-500 mt-2 flex-shrink-0`}></span>
+                      <span className="font-body leading-relaxed">{requirement}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
