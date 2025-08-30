@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { IconSparkles, IconHeart, IconStar, IconDownload, IconPlayerPlay } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
+import { trackEvent, AnalyticsEvents } from '../utils/analytics'
 
 const Hero = () => {
   const { t } = useTranslation()
@@ -166,6 +167,12 @@ const Hero = () => {
                 className="btn-primary font-cute inline-flex items-center gap-3 text-sm sm:text-base"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  trackEvent(AnalyticsEvents.HERO_CTA_CLICK, { 
+                    action: 'download',
+                    source: 'hero-section' 
+                  })
+                }}
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}
@@ -180,6 +187,12 @@ const Hero = () => {
                 className="btn-secondary font-cute inline-flex items-center gap-3 text-sm sm:text-base"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  trackEvent(AnalyticsEvents.HERO_CTA_CLICK, { 
+                    action: 'learn-more',
+                    source: 'hero-section' 
+                  })
+                }}
               >
                 <motion.div
                   whileHover={{ rotate: 360 }}

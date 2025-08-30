@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { trackEvent, AnalyticsEvents } from '../utils/analytics'
 
 interface ClickEffectItem {
   id: string
@@ -56,6 +57,12 @@ const ClickEffect = () => {
     // 看看有没有 iframe 内嵌
     if (window.GameEvent) {
       window.GameEvent.emit('press-pet');
+      
+      // 追踪水豚互动
+      trackEvent(AnalyticsEvents.PET_INTERACTION, {
+        action: 'click',
+        position: { x: event.clientX, y: event.clientY }
+      })
 
       //  0.1的概率切换随机装扮
       // if (Math.random() < 0.1) {

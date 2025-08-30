@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { IconClock, IconHeart, IconSparkles, IconGift, IconDeviceGamepad2, IconCoffee } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
+import { trackEvent, AnalyticsEvents } from '../utils/analytics'
 
 const Features = () => {
   const { t } = useTranslation()
@@ -99,6 +100,12 @@ const Features = () => {
               transition={{ duration: 0.3, delay: index * 0.05 }}
               whileHover={{ y: -10 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => {
+                trackEvent(AnalyticsEvents.FEATURE_CARD_CLICK, { 
+                  feature: feature.title,
+                  index: index
+                })
+              }}
             >
               {/* 图标 */}
               <motion.div
@@ -143,6 +150,12 @@ const Features = () => {
             className="btn-primary inline-flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              trackEvent(AnalyticsEvents.FEATURES_CTA_CLICK, { 
+                action: 'download',
+                source: 'features-section' 
+              })
+            }}
           >
             <IconHeart size={20} />
             {t('features.cta')}

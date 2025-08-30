@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { IconMenu2, IconX, IconWorld } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
 import { getAllLanguageInfo, setUserLanguage, setLanguageInURL } from '../utils/languageUtils'
+import { trackEvent, AnalyticsEvents } from '../utils/analytics'
 
 const Navigation = () => {
   const { t, i18n } = useTranslation()
@@ -35,6 +36,12 @@ const Navigation = () => {
     setLanguageInURL(lng as 'zh' | 'en' | 'ja')
     i18n.changeLanguage(lng)
     setIsLangMenuOpen(false)
+    
+    // 追踪语言切换事件
+    trackEvent(AnalyticsEvents.LANGUAGE_CHANGE, { 
+      from: i18n.language,
+      to: lng 
+    })
   }
 
   return (
@@ -84,6 +91,12 @@ const Navigation = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -2 }}
+                onClick={() => {
+                  trackEvent(AnalyticsEvents.NAVIGATION_CLICK, { 
+                    section: item.name,
+                    target: item.href 
+                  })
+                }}
               >
                 {item.name}
                 <motion.div
@@ -180,7 +193,13 @@ const Navigation = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => {
+                setIsMobileMenuOpen(false)
+                trackEvent(AnalyticsEvents.MOBILE_NAVIGATION_CLICK, { 
+                  section: item.name,
+                  target: item.href 
+                })
+              }}
               whileHover={{ x: 10 }}
             >
               {item.name}
@@ -193,7 +212,13 @@ const Navigation = () => {
               {languages.map((lang) => (
                 <motion.button
                   key={lang.code}
-                  onClick={() => changeLanguage(lang.code)}
+                  onClick={() => {
+                    changeLanguage(lang.code)
+                    trackEvent(AnalyticsEvents.MOBILE_LANGUAGE_CHANGE, { 
+                      from: i18n.language,
+                      to: lang.code 
+                    })
+                  }}
                   className={`w-full flex items-center gap-2 px-4 py-2 rounded-xl text-left font-cute transition-colors ${
                     i18n.language === lang.code
                       ? 'bg-capy-500 text-white'

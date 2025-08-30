@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import LanguageDetector from './components/LanguageDetector'
 import { getRecommendedLanguage } from './utils/languageUtils'
 import ClickEffect from './components/ClickEffect'
+import { trackEvent, trackPageView, AnalyticsEvents } from './utils/analytics'
 
 declare global {
   interface Window {
@@ -37,10 +38,19 @@ function App() {
     i18n.changeLanguage(recommendedLanguage)
   }, [i18n])
 
-  // 根据当前语言设置html的lang属性
+  // 根据当前语言设置html的lang属性和追踪页面视图
   useEffect(() => {
     if (typeof document !== 'undefined') {
       document.documentElement.lang = i18n.language
+      
+      // 追踪页面视图和语言设置
+      trackPageView(window.location.pathname, document.title)
+      trackEvent(AnalyticsEvents.PAGE_VIEW_WITH_LANGUAGE, { 
+        language: i18n.language,
+        user_agent: navigator.userAgent,
+        screen_resolution: `${screen.width}x${screen.height}`,
+        viewport: `${window.innerWidth}x${window.innerHeight}`
+      })
     }
   }, [i18n.language])
 

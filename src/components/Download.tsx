@@ -3,6 +3,7 @@ import { Download as DownloadIcon, Apple, Monitor, Star, Users, Trophy } from 'l
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 import { getLatestVersion, formatFileSize, getPlatformDownloadUrl } from '../utils/version'
+import { trackEvent, trackError, AnalyticsEvents } from '../utils/analytics'
 
 interface PlatformDownload {
   platform: 'mac' | 'windows' | 'linux'
@@ -27,6 +28,9 @@ const Download = () => {
         }
       } catch (error) {
         console.error('Failed to fetch version info:', error)
+        trackError(AnalyticsEvents.VERSION_FETCH_ERROR, {
+          error_message: error instanceof Error ? error.message : String(error)
+        })
       } finally {
         setLoading(false)
       }
@@ -106,6 +110,13 @@ const Download = () => {
   const handleDownload = (platform: 'mac' | 'windows' | 'linux') => {
     const downloadUrl = getPlatformDownloadUrl(downloads, platform)
     if (downloadUrl) {
+      // 追踪下载事件
+      trackEvent(AnalyticsEvents.APP_DOWNLOAD, { 
+        platform: platform,
+        version: currentVersion,
+        file_size: getPlatformInfo(platform).size
+      })
+      
       // 创建隐藏的下载链接来避免页面跳动
       const link = document.createElement('a')
       link.href = downloadUrl

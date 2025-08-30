@@ -7,6 +7,7 @@ import {
   IconStar,
   IconWand
 } from '@tabler/icons-react'
+import { trackEvent, AnalyticsEvents } from '../utils/analytics'
 
 interface SkinData {
   id: number
@@ -173,6 +174,14 @@ const PetSkinShowcase = () => {
                       if (!isActive) {
                         setIsAutoPlay(false)
                         setSelectedSkin(index)
+                        
+                        // 追踪水豚皂肤选择事件
+                        trackEvent(AnalyticsEvents.PET_SKIN_SELECT, { 
+                          skin_name: skin.name,
+                          skin_rarity: skin.rarity,
+                          skin_category: skin.category,
+                          skin_index: index
+                        })
                       }
                     }}
                   >
@@ -281,6 +290,13 @@ const PetSkinShowcase = () => {
               onClick={() => {
                 setIsAutoPlay(false)
                 setSelectedSkin(index)
+                
+                // 追踪缩略图点击
+                trackEvent(AnalyticsEvents.PET_SKIN_THUMBNAIL_CLICK, { 
+                  skin_name: skin.name,
+                  skin_index: index,
+                  interaction_type: 'thumbnail'
+                })
               }}
               className={`relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
                 index === selectedSkin 

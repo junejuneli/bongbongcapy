@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { IconSparkles, IconCrown, IconShirt, IconSword, IconMusic, IconFlower, IconWriting } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
 import { costumes } from '../data/costumes'
+import { trackEvent, AnalyticsEvents } from '../utils/analytics'
 
 // 装扮选择记录的类型定义
 interface CostumeSelection {
@@ -119,7 +120,15 @@ const CostumeGallery = () => {
             {categories.map((category) => (
               <motion.button
                 key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
+                onClick={() => {
+                  setSelectedCategory(category.id)
+                  
+                  // 追踪服装分类切换
+                  trackEvent(AnalyticsEvents.COSTUME_CATEGORY_SELECT, { 
+                    category: category.id,
+                    category_name: category.name
+                  })
+                }}
                 className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 sm:py-3 rounded-full font-cute font-medium transition-all duration-300 text-xs sm:text-sm ${selectedCategory === category.id
                   ? 'bg-gradient-to-r from-lotus-500 to-pond-500 text-white shadow-lg'
                   : 'text-gray-600 hover:text-lotus-600 hover:bg-white/30'
@@ -178,6 +187,14 @@ const CostumeGallery = () => {
                     
                     // 发送事件到游戏引擎
                     window.GameEvent.emit('render-skin', data)
+                    
+                    // 追踪装扮选择事件
+                    trackEvent(AnalyticsEvents.COSTUME_SELECT, { 
+                      costume_id: costume.id,
+                      costume_category: selectedCategory,
+                      costume_rarity: costume.rarity,
+                      costume_name: costume.name[i18n.language as keyof typeof costume.name]
+                    })
                     
                     console.log('装扮选择已更新:', { 
                       category: type, 
@@ -298,6 +315,12 @@ const CostumeGallery = () => {
             className="btn-primary inline-flex items-center gap-3 font-cute"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              trackEvent(AnalyticsEvents.COSTUME_GALLERY_CTA_CLICK, { 
+                action: 'download',
+                source: 'costume-gallery' 
+              })
+            }}
           >
             <motion.div
               whileHover={{ rotate: 360 }}

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { IconHeart, IconMail, IconBrandGithub, IconBrandTwitter, IconBrandDiscord } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
+import { trackEvent, AnalyticsEvents } from '../utils/analytics'
 
 const Footer = () => {
   const { t } = useTranslation()
@@ -94,6 +95,12 @@ const Footer = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
+                    onClick={() => {
+                      trackEvent(AnalyticsEvents.SOCIAL_LINK_CLICK, { 
+                        platform: social.label.toLowerCase(),
+                        url: social.href 
+                      })
+                    }}
                   >
                     <social.icon className="w-5 h-5" />
                   </motion.a>
@@ -158,9 +165,42 @@ const Footer = () => {
             </div>
             
             <div className="flex gap-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-white transition-colors font-body">{t('footer.links.privacy')}</a>
-              <a href="#" className="hover:text-white transition-colors font-body">{t('footer.links.terms')}</a>
-              <a href="#" className="hover:text-white transition-colors font-body">{t('footer.links.cookies')}</a>
+              <a 
+                href="#" 
+                className="hover:text-white transition-colors font-body"
+                onClick={() => {
+                  trackEvent(AnalyticsEvents.FOOTER_LINK_CLICK, { 
+                    link: 'privacy',
+                    text: t('footer.links.privacy') 
+                  })
+                }}
+              >
+                {t('footer.links.privacy')}
+              </a>
+              <a 
+                href="#" 
+                className="hover:text-white transition-colors font-body"
+                onClick={() => {
+                  trackEvent(AnalyticsEvents.FOOTER_LINK_CLICK, { 
+                    link: 'terms',
+                    text: t('footer.links.terms') 
+                  })
+                }}
+              >
+                {t('footer.links.terms')}
+              </a>
+              <a 
+                href="#" 
+                className="hover:text-white transition-colors font-body"
+                onClick={() => {
+                  trackEvent(AnalyticsEvents.FOOTER_LINK_CLICK, { 
+                    link: 'cookies',
+                    text: t('footer.links.cookies') 
+                  })
+                }}
+              >
+                {t('footer.links.cookies')}
+              </a>
             </div>
           </div>
         </motion.div>
