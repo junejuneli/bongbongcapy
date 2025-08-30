@@ -38,7 +38,7 @@ const Footer = () => {
   // ]
 
   const socialLinks = [
-    { icon: IconBrandGithub, href: '#', label: 'GitHub' },
+    { icon: IconBrandGithub, href: 'https://github.com/junejuneli/bongbongcapy', label: 'GitHub' },
     { icon: IconBrandTwitter, href: '#', label: 'Twitter' },
     { icon: IconBrandDiscord, href: '#', label: 'Discord' },
     { icon: IconMail, href: 'mailto:contact@bongbongcapy.com', label: 'Email' }
