@@ -1,52 +1,64 @@
 # Robots.txt for BongBongCapy - 敲好运卡皮巴拉游戏官网
+# https://capy.ybxqk.cn/
 # 允许所有搜索引擎抓取网站内容
 
+# 默认规则 - 允许所有
 User-agent: *
 Allow: /
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /*.map$
 
-# 允许抓取重要资源
-Allow: /images/
-Allow: /capy_skins/
-Allow: /pet-item/
-Allow: /versions/
-
-# 禁止抓取源码和配置文件
-Disallow: /src/
-Disallow: *.json
-Disallow: *.map
-Disallow: *.ts
-Disallow: *.tsx
-
-# 特别允许抓取配置文件中的皮肤配置（对SEO有益）
-Allow: /capy_skins/configs.json
-Allow: /versions/latest.json
-
-# 网站地图位置
-Sitemap: https://capy.ybxqk.cn/sitemap.xml
-
-# 爬取延时（对服务器友好）
-Crawl-delay: 1
-
-# 针对不同搜索引擎的特殊设置
+# Google搜索引擎优化
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
-User-agent: Bingbot  
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /capy_skins/
+
+# Google移动爬虫
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Bing搜索引擎
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: BingPreview
+Allow: /
+
+# 百度搜索引擎优化
+User-agent: Baiduspider
 Allow: /
 Crawl-delay: 1
 
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 2
+User-agent: Baiduspider-image
+Allow: /images/
+Allow: /capy_skins/
 
+User-agent: Baiduspider-mobile
+Allow: /
+
+# 360搜索
 User-agent: 360Spider
 Allow: /
-Crawl-delay: 2
+Crawl-delay: 1
 
+# 搜狗搜索
 User-agent: Sogou web spider
 Allow: /
-Crawl-delay: 2
+Crawl-delay: 1
+
+User-agent: Sogou inst spider
+Allow: /
+
+# 神马搜索（UC/阿里）
+User-agent: YisouSpider
+Allow: /
+Crawl-delay: 1
 
 # 社交媒体爬虫
 User-agent: facebookexternalhit
@@ -57,3 +69,15 @@ Allow: /
 
 User-agent: LinkedInBot
 Allow: /
+
+User-agent: PinterestBot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# 网站地图位置
+Sitemap: https://capy.ybxqk.cn/sitemap.xml
+
+# 主机信息
+Host: capy.ybxqk.cn
