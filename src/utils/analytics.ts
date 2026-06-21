@@ -2,7 +2,9 @@
  * Umami 事件追踪工具函数
  */
 
-export const trackEvent = (eventName: string, eventData?: Record<string, any>) => {
+type AnalyticsPayload = Record<string, unknown>
+
+export const trackEvent = (eventName: string, eventData?: AnalyticsPayload) => {
   if (typeof umami !== 'undefined') {
     umami.track(eventName, eventData)
   }
@@ -14,7 +16,7 @@ export const trackPageView = (url?: string, title?: string) => {
   }
 }
 
-export const identifyUser = (userId?: string, userData?: Record<string, any>) => {
+export const identifyUser = (userId?: string, userData?: AnalyticsPayload) => {
   if (typeof umami !== 'undefined') {
     umami.identify(userId, userData)
   }
@@ -61,7 +63,7 @@ export const AnalyticsEvents = {
 } as const
 
 // 便捷的错误追踪方法
-export const trackError = (errorType: string, errorDetails?: Record<string, any>): void => {
+export const trackError = (errorType: string, errorDetails?: AnalyticsPayload): void => {
   trackEvent('error', {
     error_type: errorType,
     ...errorDetails

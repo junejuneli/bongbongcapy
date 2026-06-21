@@ -16,7 +16,7 @@ import { trackEvent, trackPageView, AnalyticsEvents } from './utils/analytics'
 declare global {
   interface Window {
     GameEvent: {
-      emit: (event: string, data?: any) => void;
+      emit: (event: string, data?: unknown) => void;
     };
     /**
      * // 敲击
@@ -76,4 +76,4 @@ function App() {
   )
 }
 
-export default App 
+export default App

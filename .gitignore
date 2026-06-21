@@ -49,4 +49,8 @@ temp/
 .parcel-cache/
 
 # Vite
-.vite/ 
+.vite/
+
+# Release installers are hosted in GitHub Releases.
+public/versions/*/
+!public/versions/latest.json
