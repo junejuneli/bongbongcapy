@@ -2,7 +2,7 @@ import { existsSync, readdirSync, rmSync, statSync } from 'node:fs'
 import { basename, join, resolve } from 'node:path'
 
 const versionsDir = resolve('public', 'versions')
-const keepCount = Number.parseInt(process.env.KEEP_VERSION_COUNT || '3', 10)
+const keepCount = Number.parseInt(process.env.KEEP_VERSION_COUNT || '1', 10)
 const versionPattern = /^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/
 
 function compareVersions(a, b) {

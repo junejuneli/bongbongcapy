@@ -5,13 +5,13 @@
   "downloads": [
     {
       "platform": "mac",
-      "downloadUrl": "https://github.com/junejuneli/bongbongcapy/releases/download/v0.0.4/%E6%95%B2%E6%95%B2%E6%95%B2%E5%A5%BD%E8%BF%90_0.0.4_aarch64.dmg",
+      "downloadUrl": "/versions/0.0.4/敲敲敲好运_0.0.4_aarch64.dmg",
       "size": 36394338,
       "filename": "敲敲敲好运_0.0.4_aarch64.dmg"
     },
     {
       "platform": "windows",
-      "downloadUrl": "https://github.com/junejuneli/bongbongcapy/releases/download/v0.0.4/%E6%95%B2%E6%95%B2%E6%95%B2%E5%A5%BD%E8%BF%90_0.0.4_x64-setup.exe",
+      "downloadUrl": "/versions/0.0.4/敲敲敲好运_0.0.4_x64-setup.exe",
       "size": 32575390,
       "filename": "敲敲敲好运_0.0.4_x64-setup.exe"
     }

@@ -39,7 +39,7 @@ home/
 │   ├── images/              # 宣传图与皮肤素材
 │   │   └── skins/           # 皮肤展示图
 │   ├── pet-item/            # 游戏引擎相关资源
-│   └── versions/            # 版本信息（仅跟踪 latest.json）
+│   └── versions/            # 最新安装包与 latest.json
 ├── src/
 │   ├── components/          # React 组件
 │   ├── data/                # 静态数据与配置
@@ -91,9 +91,9 @@ home/
 ## 资源与部署建议
 
 - 新增图片或大文件请提前压缩，放置于 `public/images/` 或 `public/pet-item/` 对应目录。
-- 安装包托管在 GitHub Releases，仓库内只保留 `public/versions/latest.json` 作为下载元数据。
-- 本地如临时放置 `public/versions/<version>/` 安装包目录，提交前运行 `pnpm run prune:versions` 保留最新 3 个本地目录；这些目录已被 `.gitignore` 忽略。
-- 发布新安装包时，先上传到 `junejuneli/bongbongcapy` 的对应 `vX.Y.Z` Release，再把 `latest.json` 的 `downloadUrl`、`size`、`filename` 更新到最新版本。
+- 官网下载只提供最新版本，仓库内保留 `public/versions/<latest>/` 安装包目录与 `public/versions/latest.json`。
+- 提交前运行 `pnpm run prune:versions`，默认只保留最新 1 个本地版本目录；如需临时保留更多版本，可设置 `KEEP_VERSION_COUNT`。
+- 历史安装包可上传到 `junejuneli/bongbongcapy` 的对应 `vX.Y.Z` GitHub Release，避免官网仓库继续累积旧版本包。
 - 部署时使用 `pnpm run build` 生成 `dist/`，以静态资源方式托管即可；结合 CDN 可进一步提升访问速度。
 - 生产环境需确保 Umami 或其他分析脚本正确指向正式域名。
 
