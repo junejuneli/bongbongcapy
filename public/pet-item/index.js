@@ -1,8 +1,45 @@
 
 ;(function () {
   var marker = '__BONGBONGCAPY_TRANSPARENT_CANVAS_PATCH__';
+  var blendMarker = marker + '_blend';
   if (window[marker]) return;
   window[marker] = true;
+
+  function patchTransparentBlend(gl) {
+    if (!gl || gl[blendMarker]) return gl;
+    gl[blendMarker] = true;
+
+    var srcAlpha = gl.SRC_ALPHA;
+    var oneMinusSrcAlpha = gl.ONE_MINUS_SRC_ALPHA;
+    var one = gl.ONE;
+    var originalBlendFuncSeparate = gl.blendFuncSeparate;
+    var originalBlendFunc = gl.blendFunc;
+
+    gl.blendFuncSeparate = function (srcRGB, dstRGB, srcAlphaFactor, dstAlphaFactor) {
+      if (
+        srcRGB === srcAlpha &&
+        dstRGB === oneMinusSrcAlpha &&
+        srcAlphaFactor === srcAlpha &&
+        dstAlphaFactor === oneMinusSrcAlpha
+      ) {
+        return originalBlendFuncSeparate.call(this, srcRGB, dstRGB, one, dstAlphaFactor);
+      }
+
+      return originalBlendFuncSeparate.call(this, srcRGB, dstRGB, srcAlphaFactor, dstAlphaFactor);
+    };
+
+    if (originalBlendFunc) {
+      gl.blendFunc = function (srcFactor, dstFactor) {
+        if (srcFactor === srcAlpha && dstFactor === oneMinusSrcAlpha) {
+          return originalBlendFuncSeparate.call(this, srcFactor, dstFactor, one, dstFactor);
+        }
+
+        return originalBlendFunc.call(this, srcFactor, dstFactor);
+      };
+    }
+
+    return gl;
+  }
 
   var originalGetContext = HTMLCanvasElement.prototype.getContext;
   HTMLCanvasElement.prototype.getContext = function (type, attrs) {
@@ -12,7 +49,11 @@
         premultipliedAlpha: false
       });
     }
-    return originalGetContext.call(this, type, attrs);
+    var context = originalGetContext.call(this, type, attrs);
+    if (this && this.id === 'GameCanvas' && typeof type === 'string' && type.toLowerCase().indexOf('webgl') !== -1) {
+      patchTransparentBlend(context);
+    }
+    return context;
   };
 
   var canvas = document.getElementById('GameCanvas');
